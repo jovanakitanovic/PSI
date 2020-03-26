@@ -88,17 +88,17 @@
 									<tr>
 									<tr> <h5> Čorba <hr/></h5></h5></tr>
 Luk iseći na sitne kockice i staviti da se dinsta na ulju. Dodati šargarepu takođe iseckanu na kockice i dinstati nekoliko minuta dok ne omekša. Dodati meso, propržiti ga, posuti jednom i po kašikom brašna, izmešati i zatim doliti toplu vodu. Kada prokuva, dodati začine i peršunov list i ostaviti da se kuva na umerenoj temperaturi oko sat vremena. Kada je skuvana skinuti sa vatre i dodati žumance i pavlaku. Umutiti žumance sa pavlakom, sipati malo čorbe, razmutiti i vratiti u čorbu.									</tr>	
-									<tr>	<h5> oceni </h5>
-									<input type="radio" name="o1"  /> 5			
-									<input type="radio" name="o1" /> 4	
-									<input type="radio" name="o1" /> 3	
-									<input type="radio" name="o1" /> 2	
-									<input type="radio" name="o1" /> 1	
-									<input type="radio" name="o1" checked /> bez ocene		&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" align="left">sačuvaj</button>		
-									&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>		
-
+									<tr>	<hr/><h5> oceni </h5>
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="5" class="question_radio" /> &nbsp			
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="4" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="3" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="2" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="1" /> 	
+										&nbsp &nbsp &nbsp 
+                                                                                <input type="submit" name="sacuvaj'.$row['id'].'" class="btn btn-primary" value="sačuvaj">		
+                                                                                &nbsp &nbsp &nbsp
+									<input type="submit" name="prijavi'.$row['id'].'" class="btn btn-danger" value="prijavi">																
+								
 									</tr>
 									</table>
 								</td>
@@ -138,16 +138,16 @@ Pileće belo meso operite i osušite. Svako parče potopite u umućeno jaje, uva
 
 									</tr>	
 									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o3"  /> 5			
-									<input type="radio" name="o3" /> 4	
-									<input type="radio" name="o3" /> 3	
-									<input type="radio" name="o3" /> 2	
-									<input type="radio" name="o3" /> 1	
-									<input type="radio" name="o3" checked /> bez ocene	&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" >sačuvaj</button>		
-&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>																	
-									</tr>
+								<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="5" class="question_radio" /> &nbsp			
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="4" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="3" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="2" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="1" /> 	
+										&nbsp &nbsp &nbsp 
+                                                                                <input type="submit" name="sacuvaj'.$row['id'].'" class="btn btn-primary" value="sačuvaj">		
+                                                                                &nbsp &nbsp &nbsp
+									<input type="submit" name="prijavi'.$row['id'].'" class="btn btn-danger" value="prijavi">																
+											</tr>
 									</table>
 								</td>
 							</tr>
