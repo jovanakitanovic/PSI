@@ -1,5 +1,3 @@
-<!--Jovana Kitanovic 0603/17-->
-
 <html>
     <head>
 	<title>Administrator</title>
@@ -7,13 +5,42 @@
 	<meta charset="UTF-8">
     </head>
     <body>
+        <?php
+            include_once 'kontrola.php';
+            session_start();
+            
+            //provera da li smo na stranicu probali da udjemo direktno preko linka, bez logovanja
+            if(!isset($_SESSION["username"])) {
+                $_SESSION["err1"]=1;
+                header("Location: index.php");
+                exit;
+            }
+            if($_SESSION["admin"]==0) {
+                header("Location: pocetna_sa_nalogom.php");
+                exit;
+            }
+        ?>
+        
 	<div class="container-fluid">
             <table class="table table-borderless table-dark" align="center" >
 		<tr>
                     <td></td>
-			<td align=""><h3>Pomaži i Smaži</h3></td>
-			<td align="right"><a href="index.php" ><button type="button" class="btn btn-warning" >izloguj se</button></a></td>
-			<td></td>
+                    <td align=""><h3>Pomaži i Smaži</h3></td>
+                    <td align="right">
+                        <form method="post" action="<?php $_SERVER["PHP_SELF"]?>">
+                            <button type="submit" class="btn btn-warning" name="logout" >Izloguj se</button>
+                        </form>
+                        <?php
+                            if(isset($_POST["logout"])) {
+                                
+                                session_unset();
+                                session_destroy();
+                                header("Location: index.php");
+                                exit;
+                            }
+                        ?>
+                    </td>
+                    <td></td>
 		</tr>
             </table>
             <table class="table " align="center" >
@@ -23,78 +50,91 @@
                             <tr>
 				<td align="center">Administratorski nalog <br/> PRIJAVE</td>
                             </tr>
-            </table>
-	</td>
-	<td align="left">
-	<table  align="center" >
-            <tr>
-		<td align="center"><img src="slike/sufle.jpg"  width="400"> </img></td>								
-		<td>
-                    <table>
-			<tr>
-				<tr> <h5>Sufle <hr/></h5></h5></tr>
-Na tihoj vatri istopiti margarin i čokoladu da se dobije glatka masa. 2. Dok se to topi dobro umutiti 4 jajeta i postepeno dodati šećer. 3. U umućena jaja i šećer dodati rastopljenu masu.. 4.Kada se sve to dobro umuti dodati brašno, još malo mutiti, pa zatim u kalup za projice staviti papirne korpice, prečnika 6-7 cm, i u njih sipati masu do vrha. 5. Peći na temperaturi od 220&deg;C 7 min. dok se ne napravi tanka kora.				
-								<tr>	<hr/> 
-						<button type="button" class="btn btn-success" >ostavi</button> &nbsp &nbsp &nbsp
-						<button type="button" class="btn btn-danger" >ukloni</button>						
+                        </table>
+                    </td>
+                    <td align="left">
+                        <table  align="center" >
+                            <form method="post" action="<?php $_SERVER["PHP_SELF"]?>">
+                                <?php
+                                    include_once 'kontrola.php';
+                                    ini_set("precision",3);
 
-								</tr>
-									</table>
-								</td>
-							</tr>
-		
-							<tr>
-								<td align="center">
-									<img src="slike/salata.jpg" width="400"> </img>
-								</td>
-								<td>
-									<table>
-									<tr>
-									<tr> <h5> Pileća salata  <hr/></h5></h5></tr>
-Pileće belo meso operite i osušite. Svako parče potopite u umućeno jaje, uvaljajte u kornfleks, poređajte u podmazan pleh obložen papirom za pečenje i pecite 20 minuta u rerni zagrejanoj na 100 stepeni, a zatim ostavite sa strane. Oba avokada prepolovite i uklonite im košticu. Kašičicom izvadite pulpu jednog avokada, pomešajte je sa sokom jednog limuna i snažno promešajte. Pulpu drugog avokada iseckajte na kriške, prelijte sokom preostalog limuna i sačuvajte za kasnije. Pripremljeni pire od avokada pomešajte sa majonezom, dodajte pikantni senf i kiselu pavlaku i sve sjedinite. Salatu operite, odvojte i prstima iscepkajte listove, pa preručite u veću posudu. Dodajte paradajz isečen na kriške, iseckani mladi luk, ohlađenu piletinu i kriške avokada. Posolite, dodajte pola količine pripremljenog preliva od avokada i majoneza i promešajte, a drugu polovinu prelijte preko salate. Do serviranja čuvajte u frižideru.
+                                    $indeksi=array();
+                                    $i=0;
 
-									</tr>	
-									<tr>	<hr/> 
-									
-						<button type="button" class="btn btn-success" >ostavi</button> &nbsp &nbsp &nbsp
-						<button type="button" class="btn btn-danger" >ukloni</button>									
-									</tr>
-									</table>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<img src="slike/hleb.jpg"  width="400"> </img>
-								</td>								
-								<td>
-									<table>
-									<tr>
-									<tr> <h5>Integralni hleb <hr/></h5></h5></tr>
-1. Kvasac razmututi sa malo vode.
+                                    $sql="SELECT * FROM prijava ";
+                                    $result= mysqli_query($conn, $sql);
 
-2. U vanglu za mešenje sipati brašno, dodati so, promešati. Dodati razmućen kvasac i mlaku vodu, pa mesiti varjačom dok se ne dobije glatko testo. Sud pokriti plastičnom folijom i ostaviti oko 1h da testo naraste.
+                                    $count=array();
 
-3. Premesiti, oblikovati veknu (možete napraviti tri male vekne od ove količine), poređati u pleh. Veknice ovlaš posuti brašnom, pa zaseći nožem par puta. Ostaviti još 20 minuta.
+                                    if(mysqli_num_rows($result)>0) {
+                                        while($row = mysqli_fetch_assoc($result)) {
+                                            if(!isset($count[''.$row['idR']])) {
+                                                $indeksi[$i++]=$row['idR'];
+                                                $count[$row['idR']]=1;
+                                            } else {
+                                                $count[$row['idR']]++;
+                                            }
+                                        }
+                                    }
+                                    
+                                    foreach($indeksi as $ind) {
+                                        if(isset($_POST['ostavi'.$ind])) {
+                                            $sql = "DELETE FROM prijava where idR=$ind";
+                                            $result= mysqli_query($conn, $sql);
 
-4. Za to vreme ugrejati rernu, pa ispeći hleb (kod mene se obično peče 10 minuta na maksimumu pa još 20 na 180).								
-	<tr>	<hr/>
-				<button type="button" class="btn btn-success" >ostavi</button> &nbsp &nbsp &nbsp
-						<button type="button" class="btn btn-danger" >ukloni</button>									
-						
-									</tr>
-									</table>
-								</td>
-							</tr>
-<tr>
+                                            if($result) {
+                                                header("Location: administrator.php");
+                                                exit;
+                                            }
+                                            else echo "<script type='text/javascript'>alert('Greska u radu sa bazom');</script>";
+                                        } 
+                                        if(isset($_POST['obrisi'.$ind])) {
+                                            $sql="DELETE FROM prijava where idR=$ind;";
+                                            $result= mysqli_query($conn, $sql);
 
+                                            if($result) {
+                                                $sql = "DELETE FROM recepti where id=$ind";
+                                                $result= mysqli_query($conn, $sql);
 
-							</tr>
-						</table>
-					</td>
-				</tr>
-		
+                                                if($result) {
+                                                    header("Location: administrator.php");
+                                                    exit;
+                                                }
+                                                else echo "<script type='text/javascript'>alert('Greska u radu sa bazom');</script>";
+                                            }
+                                            else echo "<script type='text/javascript'>alert('Greska u radu sa bazom');</script>";
+                                        }
+                                    }
+
+                                    foreach($indeksi as $ind) {
+                                        $sql="SELECT * from RECEPTI where id=$ind";
+                                        $result= mysqli_query($conn, $sql);
+                                        $row=mysqli_fetch_assoc($result);
+
+                                        echo '<tr> <td align="center" width="40%" >';
+                                        echo '<img width="100%" src="'.$row['slika'] .'"></img></td>';
+                                        echo '<td width="60%"><table> <tr> <h5> '.$row['ime'].'<hr/></h5></h5></tr>'.$row['sastojci'].'<hr/>'.$row['priprema'].'</td></tr><tr><hr/>  
+                                                                            &nbsp &nbsp &nbsp 
+                                                                            <h5>Broj prijava: '.$count[$ind].'
+                                                                            &nbsp &nbsp &nbsp 
+                                                                            <input type="submit" name="ostavi'.$row['id'].'" class="btn btn-success" value="Ostavi">		
+                                                                            &nbsp &nbsp &nbsp
+                                                                            <input type="submit" name="obrisi'.$row['id'].'" class="btn btn-danger" value="Obrisi"></h5>										
+                                                                            </tr>
+                                                                            </table>
+                                                                    </td>
+                                                            </tr>
+                                                        </tr>';
+                                    }
+
+                                    
+                                ?>
+                            </form>
 			</table>
-
-		</div>
-	</body>
-</html>-->
+                    </td>
+		</tr>
+            </table>
+        </div>
+    </body>
+</html>

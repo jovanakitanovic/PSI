@@ -33,8 +33,8 @@
             //ulogovani korisnik moze biti admin ili ne, pa shodno tome jedine dve stranice na koje se skace nakon logovanja su ili admin ili korisnik sa nalogom
             //ako smo nekako uspeli da odemo na onu drugu stranicu u odnosu na ono sta smo mi, vracamo se na nasu
             //ovo postoji za slucaj kada vise puta pritiskamo back, tu zeza
-            if($_SESSION["admin"]==NULL) {
-                header("Location: pocetna_sa_nalogom.php");
+            if($_SESSION["admin"]==1) {
+                header("Location: administrator.php");
                 exit;
             }
 ?>
@@ -254,7 +254,25 @@
                  $sql="UPDATE korisnik SET ocena=$rez WHERE id=$idAutora";
                   $result= mysqli_query($conn, $sql);
                 }
-              }   
+              }
+                if(isset($_POST["prijavi".$ind])) {
+                            
+                            $sql = "SELECT * FROM prijava";
+                            $result = mysqli_query($conn, $sql);
+                            
+                            while($row= mysqli_fetch_assoc($result)) {
+                                if($ind==$row['idR']&&$id==$row['idK']) {
+                                    echo "<script type='text/javascript'>alert('Vec ste prijavili ovaj recept');</script>";
+                                    exit;
+                                }
+                            }
+                            
+                            $sql = "INSERT INTO prijava(idR,idK) VALUES($ind,$id)";
+                            $result= mysqli_query($conn, $sql);
+                            
+                            if($result) echo "<script type='text/javascript'>alert('Nepozeljan sadrzaj je uspesno prijavljen');</script>";
+                            else echo "<script type='text/javascript'>alert('Greska u prijavi recepta');</script>";
+                        }
                 }
                 ?>
 		

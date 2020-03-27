@@ -7,34 +7,31 @@
 	</head>
 	<body>
 	      <?php
-        include_once 'kontrola.php';
-            $id;
-            session_start();
-            //provera da li smo na stranicu probali da udjemo direktno preko linka, bez logovanja
-            if(!isset($_SESSION["username"])) {
-               $_SESSION["err1"]=1;
-                header("Location: index.php");
-                exit;
-               echo "<script type='text/javascript'>alert('nistte lepo ulogovani');</script>"    ;
+                include_once 'kontrola.php';
+                $id;
+                session_start();
+                //provera da li smo na stranicu probali da udjemo direktno preko linka, bez logovanja
+                    if(!isset($_SESSION["username"])) {
+                        $_SESSION["err1"]=1;
+                        header("Location: index.php");
+                        exit;
+                        echo "<script type='text/javascript'>alert('nistte lepo ulogovani');</script>"    ;
+                        
+                    }
+                    $user=$_SESSION["username"];
 
-                
-            }
-              $user=$_SESSION["username"];
-
-           $sql="SELECT id FROM korisnik WHERE username='$user'";
-            $result= mysqli_query($conn, $sql);
+                    $sql="SELECT id FROM korisnik WHERE username='$user'";
+                    $result= mysqli_query($conn, $sql);
          
                     if(mysqli_num_rows($result)>0)
-                       while($row= mysqli_fetch_assoc($result)){
-                     // echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
+                        while($row= mysqli_fetch_assoc($result)){
+                            // echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
                             $id=$row['id'];
-                       }
+                        }
             
-            //ulogovani korisnik moze biti admin ili ne, pa shodno tome jedine dve stranice na koje se skace nakon logovanja su ili admin ili korisnik sa nalogom
-            //ako smo nekako uspeli da odemo na onu drugu stranicu u odnosu na ono sta smo mi, vracamo se na nasu
-            //ovo postoji za slucaj kada vise puta pritiskamo back, tu zeza
-            if($_SESSION["admin"]==NULL) {
-                header("Location: pocetna_sa_nalogom.php");
+            
+            if($_SESSION["admin"]==1) {
+                header("Location: administrator.php");
                 exit;
             }
 ?>
@@ -163,100 +160,118 @@
                        if($indeksi!=0)
                 foreach ($indeksi as $ind)    {
                                        
-                   if(isset($_POST['sacuvaj'.$ind]))
-                   {
-                     $sql="SELECT * FROM sacuvano WHERE idK=".$id." and idR="."$ind";
-                      $result= mysqli_query($conn, $sql);
+                    if(isset($_POST['sacuvaj'.$ind]))
+                    {
+                        $sql="SELECT * FROM sacuvano WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
                         
-                      if(mysqli_num_rows($result)>0)  {
-                      echo "<script type='text/javascript'>alert('recept je već sačuvan');</script>"    ;
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već sačuvan');</script>"    ;
                         }
-                       else{
-                          $sql ="INSERT INTO sacuvano(idK,idR) VALUES($id,$ind)" ;
-                          $result= mysqli_query($conn, $sql);
-                       }
-                   }
+                        else{
+                            $sql ="INSERT INTO sacuvano(idK,idR) VALUES($id,$ind)" ;
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }
                    
                     if(isset($_POST['o'.$ind])){
-                       $ocena=$_POST['o'.$ind];
+                        $ocena=$_POST['o'.$ind];
                     
-                  $sql="SELECT * FROM ko WHERE idK=".$id." and idR="."$ind";
-                   $result= mysqli_query($conn, $sql);
+                        $sql="SELECT * FROM ko WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
                         
-            if(mysqli_num_rows($result)>0)  {
-               echo "<script type='text/javascript'>alert('recept je već ocenjen');</script>"    ;
-                }
-              else{
-                  $o=0;
-                  $num;
-                $sql="INSERT INTO ko(idK,idR,ocena) VALUES($id,$ind,$ocena)";
-                $result= mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već ocenjen');</script>"    ;
+                        }
+                        else{
+                            $o=0;
+                            $num;
+                            $sql="INSERT INTO ko(idK,idR,ocena) VALUES($id,$ind,$ocena)";
+                            $result= mysqli_query($conn, $sql);
                 
-                $sql="select count(idR) as sum from ko where idR="."$ind" ;
-                $result= mysqli_query($conn, $sql);
+                            $sql="select count(idR) as sum from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
             
-                while($row= mysqli_fetch_assoc($result)){
-                     //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
-                    $num=$row['sum'];    
-                }
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
                 
-                //ocenjivanje pojedinacnih recepata
+                            //ocenjivanje pojedinacnih recepata
                 
-                 $sql="select SUM(ocena) as sumO from ko where idR="."$ind" ;
-                $result= mysqli_query($conn, $sql);
+                            $sql="select SUM(ocena) as sumO from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
             
-                while($row= mysqli_fetch_assoc($result)){
-                      //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
-                    $o=$row['sumO'];    
-                }
-                $rez=$o/$num;
-                // echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
+                            $rez=$o/$num;
+                            // echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;
                 
-                 $sql="UPDATE recepti SET ocena=$rez WHERE id=$ind";
-                  $result= mysqli_query($conn, $sql);
+                            $sql="UPDATE recepti SET ocena=$rez WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
                  
                                  
-              //ocenjivanje svih recepata korisnikaa   
+                            //ocenjivanje svih recepata korisnikaa   
                   
                   
-                  $idAutora;
-                  $sql="SELECT autor FROM recepti WHERE id=$ind";
-                   $result= mysqli_query($conn, $sql);
-                    while($row= mysqli_fetch_assoc($result)){
-                      //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
-                    $idAutora=$row['autor'];    
-                }
+                            $idAutora;
+                            $sql="SELECT autor FROM recepti WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $idAutora=$row['autor'];    
+                            }
                 
-               // echo "<script type='text/javascript'>alert('".$idAutora."');</script>"   ;
+                            // echo "<script type='text/javascript'>alert('".$idAutora."');</script>"   ;
 
                   
-               $sql="select SUM(ocena) as sumO from recepti where autor="."$idAutora" ;
-                $result= mysqli_query($conn, $sql);
+                            $sql="select SUM(ocena) as sumO from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
                 
-                while($row= mysqli_fetch_assoc($result)){
-                      //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
-                    $o=$row['sumO'];    
-                }
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
                 
-                $sql="select count(id) as sum from recepti where autor="."$idAutora" ;
-                $result= mysqli_query($conn, $sql);
+                            $sql="select count(id) as sum from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
             
-                while($row= mysqli_fetch_assoc($result)){
-                     //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
-                    $num=$row['sum'];    
-                }
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
                 
-                $rez=$o/$num;
+                            $rez=$o/$num;
                 
-                /* echo "<script type='text/javascript'>alert('".$num."');</script>"   ;
-                 echo "<script type='text/javascript'>alert('".$o."');</script>"   ;
-                echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;*/
+                            /* echo "<script type='text/javascript'>alert('".$num."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$o."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;*/
 
 
-                 $sql="UPDATE korisnik SET ocena=$rez WHERE id=$idAutora";
-                  $result= mysqli_query($conn, $sql);
-                }
-              }   
+                            $sql="UPDATE korisnik SET ocena=$rez WHERE id=$idAutora";
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }  
+                    if(isset($_POST["prijavi".$ind])) {
+                            
+                            $sql = "SELECT * FROM prijava";
+                            $result = mysqli_query($conn, $sql);
+                            
+                            while($row= mysqli_fetch_assoc($result)) {
+                                if($ind==$row['idR']&&$id==$row['idK']) {
+                                    echo "<script type='text/javascript'>alert('Vec ste prijavili ovaj recept');</script>";
+                                    exit;
+                                }
+                            }
+                            
+                            $sql = "INSERT INTO prijava(idR,idK) VALUES($ind,$id)";
+                            $result= mysqli_query($conn, $sql);
+                            
+                            if($result) echo "<script type='text/javascript'>alert('Nepozeljan sadrzaj je uspesno prijavljen');</script>";
+                            else echo "<script type='text/javascript'>alert('Greska u prijavi recepta');</script>";
+                        }
                 }
                 ?>
 		
