@@ -126,7 +126,7 @@
                     $sastojci=$_POST['sastojci'];
                     $priprema=$_POST['priprema'];
                     $slika= basename($_FILES['fileToUpload']['name']);  
-                    
+                  //  echo $priprema;
                     $imageFileType;
                     $target_dir;
                      $target_file ;

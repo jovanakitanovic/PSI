@@ -6,7 +6,37 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-			
+		<?php
+                include_once 'kontrola.php';
+                $id;
+                session_start();
+                //provera da li smo na stranicu probali da udjemo direktno preko linka, bez logovanja
+                    if(!isset($_SESSION["username"])) {
+                        $_SESSION["err1"]=1;
+                        header("Location: index.php");
+                        exit;
+                        echo "<script type='text/javascript'>alert('nistte lepo ulogovani');</script>"    ;
+                        
+                    }
+                    $user=$_SESSION["username"];
+
+                    $sql="SELECT id FROM korisnik WHERE username='$user'";
+                    $result= mysqli_query($conn, $sql);
+         
+                    if(mysqli_num_rows($result)>0)
+                        while($row= mysqli_fetch_assoc($result)){
+                            // echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
+                            $id=$row['id'];
+                        }
+            
+            
+            if($_SESSION["admin"]==1) {
+                header("Location: administrator.php");
+                exit;
+            }
+?>
+            
+            <form method="POST">	
 		<div  class="container-fluid">			
 			<table class="table table-borderless table-dark" align="center" >
 				<tr>
@@ -16,9 +46,20 @@
 					</td>
 					
 					<td align="right">
-					
-					<a href="index.html" ><button type="button" class="btn btn-warning" >izloguj se</button></a>
 							
+					  <form method="post" action="<?php $_SERVER["PHP_SELF"]?>">
+                                <button type="submit" class="btn btn-warning" name="logout" >Izloguj se</button>
+                            </form><?php
+                                             
+                                                if(isset($_POST["logout"])) {
+                                                echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
+
+                                                session_unset();
+                                                session_destroy();
+                                                header("Location: index.php");
+                                                exit;
+                                                 }
+                                              ?>	
 					</td>
 					<td></td>
 				</tr>
@@ -36,139 +77,214 @@
 					<table class="table table-bordered table-dark" align="center" >
 						<tr>
 							<td align="center">
-								<a href="slatko_sa_nalogom.html"  class="text-white">slatko ćoše</a>
+								<a href="slatko_sa_nalogom.php"  class="text-white">slatko ćoše</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="meso_sa_nalogom.html"  class="text-white">za mesojede</a>
+								<a href="meso_sa_nalogom.php"  class="text-white">za mesojede</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="testo_sa_nalogom.html" class="text-white">svakojaka testa</a>
+								<a href="testo_sa_nalogom.php" class="text-white">svakojaka testa</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="pocetna_sa_nalogom.html" class="text-success">sva jela</a>
+								<a href="pocetna_sa_nalogom.php" class="text-success">sva jela</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="izvrni_kuvar_sa_nalogom.html" class="text-danger">izvrsni kuvar</a>
+								<a href="izvrni_kuvar_sa_nalogom.php" class="text-danger">izvrsni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="odlični_kuvar_sa_nalogom.html" class="text-danger">odlični kuvar</a>
+								<a href="odlični_kuvar_sa_nalogom.php" class="text-danger">odlični kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="solidni_kuvar_sa_nalogom.html" class="text-danger">solidni kuvar</a>
+								<a href="solidni_kuvar_sa_nalogom.php" class="text-danger">solidni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="moj_nalog.html" class="text-info">moj nalog</a>
+								<a href="moj_nalog.php" class="text-info">moj nalog</a>
 							</td>
 						</tr>
 
 					</table>
 					</td>
-					<td  >
+					<td  align="left">
 					<table  align="center" >
-	
-							<tr>
-								<td align="center">
-									<img src="slike/pereca.jpg"   width="400"> </img>
-								</td>
-								<td>
-									<table>
-									<tr>
-									<tr> <h5> Slana pereca <hr/></h5></h5></tr>
-U toplo mleko staviti 2 kasike ostrog brasna,
-malo secera i paketic kvasca i sacekati
-10 minuta da kvasac nadodje.
-2.
-Pomesati brasna sa uljem i solju i
-dodati kvasac te umesiti testo koje
-se ne lepi za ruke, ali ne sme biti tvrdo.
-Dobro ga mesiti na pobrasnjenoj dasci bar
-5 minuta uz dodavanje brasna ako je potrebno.
-Prekriti testo i ostaviti na toplom 30 minuta da
-udvostruci kolicinu.
-3.
-Pripremiti slani preliv. Pomesati so i brasno i
-polako dodavati hladnu vodu i mesati da
-nema grudvica.
-Gustina je kao testo za palacinke.
-4.
-Od uskislog testa kidati ili nozem odsecati
-male kuglice i prstima tanjiti u dug stapic.
-Smotati perecu i slagati na podmazan pleh.
-Samo malo podmazati uljem.
-5.
-Ostaviti da kisnu oko 10 minuta dok se rerna
-zagreje na 250 stepeni.
-6.
-Pre stavljanja u rernu perece premazati
-umucenim jajetom.
-Peci perece do blago zute boje,
-izvaditi i staviti po njima slani preliv i
-vratiti jos 2-3 minuta da se lepo zarumene,
-a preliv osusi.									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o1"  /> 5			
-									<input type="radio" name="o1" /> 4	
-									<input type="radio" name="o1" /> 3	
-									<input type="radio" name="o1" /> 2	
-									<input type="radio" name="o1" /> 1	
-									<input type="radio" name="o1" checked /> bez ocene		&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" >sačuvaj</button>		
-&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>								
+                                            
+                                       
+
+<b>recepti sa ocenom manjom od 2</b>
+                                            
+                            <?php  
+                   include_once 'kontrola.php';
+                   ini_set("precision",3);
+             
+                   $indeksi=array();
+                   $i=0;
+                 //   echo "<script type='text/javascript'>alert('alalal');</script>"   ;
+
+ 
+                   $sql="SELECT * FROM recepti WHERE ocena<2";
+                   $result= mysqli_query($conn, $sql);
+                   
+                   if(mysqli_num_rows($result)>0){
+                       while($row= mysqli_fetch_assoc($result)){
+                           $indeksi[$i++]=$row['id'];
+                           echo '<tr> <td width="40%" align="center" >';
+                              echo '<img width="100%" src="'.$row['slika'] .'"></img></td>';
+                             echo '<td width="60%"><table> <tr> <h5> '.$row['ime'].'<hr/></h5></h5></tr>'.$row['sastojci'].'<hr/>'.$row['priprema'].'</td></tr><hr/> <h5> oceni </h5>
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="5" class="question_radio" /> &nbsp			
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="4" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="3" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="2" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="1" /> 	
+										&nbsp &nbsp &nbsp 
+                                                                                <input type="submit" name="sacuvaj'.$row['id'].'" class="btn btn-primary" value="sačuvaj">		
+                                                                                &nbsp &nbsp &nbsp
+									<input type="submit" name="prijavi'.$row['id'].'" class="btn btn-danger" value="prijavi">										
 									</tr>
-									</table>
+                                 </table>
 								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<img src="slike/hleb.jpg"  width="400"> </img>
-								</td>								
-								<td>
-									<table>
-									<tr>
-									<tr> <h5>Integralni hleb <hr/></h5></h5></tr>
-1. Kvasac razmututi sa malo vode.
+							</tr></tr>';
+                             }
+                   }
+                       if($indeksi!=0)
+                foreach ($indeksi as $ind)    {
+                                       
+                    if(isset($_POST['sacuvaj'.$ind]))
+                    {
+                       
+                        $sql="SELECT * FROM sacuvano WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
+                        
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već sačuvan');</script>"    ;
+                        }
+                        else{
+                            $sql ="INSERT INTO sacuvano(idK,idR) VALUES($id,$ind)" ;
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }
+                   
+                    if(isset($_POST['o'.$ind])){
+                        $ocena=$_POST['o'.$ind];
+                    
+                        $sql="SELECT * FROM ko WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
+                        
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već ocenjen');</script>"    ;
+                        }
+                        else{
+                            $o=0;
+                            $num;
+                            $sql="INSERT INTO ko(idK,idR,ocena) VALUES($id,$ind,$ocena)";
+                            $result= mysqli_query($conn, $sql);
+                
+                            $sql="select count(idR) as sum from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
+                
+                            //ocenjivanje pojedinacnih recepata
+                
+                            $sql="select SUM(ocena) as sumO from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
+                            $rez=$o/$num;
+                            // echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;
+                
+                            $sql="UPDATE recepti SET ocena=$rez WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
+                 
+                                 
+                            //ocenjivanje svih recepata korisnikaa   
+                  
+                  
+                            $idAutora;
+                            $sql="SELECT autor FROM recepti WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $idAutora=$row['autor'];    
+                            }
+                
+                            // echo "<script type='text/javascript'>alert('".$idAutora."');</script>"   ;
 
-2. U vanglu za mešenje sipati brašno, dodati so, promešati. Dodati razmućen kvasac i mlaku vodu, pa mesiti varjačom dok se ne dobije glatko testo. Sud pokriti plastičnom folijom i ostaviti oko 1h da testo naraste.
+                  
+                            $sql="select SUM(ocena) as sumO from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
+                
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
+                
+                            $sql="select count(id) as sum from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
+                
+                            $rez=$o/$num;
+                
+                            /* echo "<script type='text/javascript'>alert('".$num."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$o."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;*/
 
-3. Premesiti, oblikovati veknu (možete napraviti tri male vekne od ove količine), poređati u pleh. Veknice ovlaš posuti brašnom, pa zaseći nožem par puta. Ostaviti još 20 minuta.
 
-4. Za to vreme ugrejati rernu, pa ispeći hleb (kod mene se obično peče 10 minuta na maksimumu pa još 20 na 180).									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o2"  /> 5			
-									<input type="radio" name="o2" /> 4	
-									<input type="radio" name="o2" /> 3	
-									<input type="radio" name="o2" /> 2	
-									<input type="radio" name="o2" /> 1	
-									<input type="radio" name="o2" checked /> bez ocene		&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" >sačuvaj</button>		
-&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>															
-									</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-		
-			</table>
+                            $sql="UPDATE korisnik SET ocena=$rez WHERE id=$idAutora";
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }  
+                    
+                    if(isset($_POST["prijavi".$ind])) {
+                            
+                            $sql = "SELECT * FROM prijava";
+                            $result = mysqli_query($conn, $sql);
+                            
+                            while($row= mysqli_fetch_assoc($result)) {
+                                if($ind==$row['idR']&&$id==$row['idK']) {
+                                    echo "<script type='text/javascript'>alert('Vec ste prijavili ovaj recept');</script>";
+                                    exit;
+                                }
+                            }
+                            
+                            $sql = "INSERT INTO prijava(idR,idK) VALUES($ind,$id)";
+                            $result= mysqli_query($conn, $sql);
+                            
+                            if($result) echo "<script type='text/javascript'>alert('Nepozeljan sadrzaj je uspesno prijavljen');</script>";
+                            else echo "<script type='text/javascript'>alert('Greska u prijavi recepta');</script>";
+                        }
+                }
+                ?>
 		
 		</div>
+			</table>
+		
+                                            </form>
 		
 		
 	</body>
+
 
 </html>

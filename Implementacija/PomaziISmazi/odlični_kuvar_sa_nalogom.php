@@ -5,7 +5,38 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<meta charset="UTF-8">
 	</head>
-	<body>
+	<body> 
+            <?php
+                include_once 'kontrola.php';
+                $id;
+                session_start();
+                //provera da li smo na stranicu probali da udjemo direktno preko linka, bez logovanja
+                    if(!isset($_SESSION["username"])) {
+                        $_SESSION["err1"]=1;
+                        header("Location: index.php");
+                        exit;
+                        echo "<script type='text/javascript'>alert('nistte lepo ulogovani');</script>"    ;
+                        
+                    }
+                    $user=$_SESSION["username"];
+
+                    $sql="SELECT id FROM korisnik WHERE username='$user'";
+                    $result= mysqli_query($conn, $sql);
+         
+                    if(mysqli_num_rows($result)>0)
+                        while($row= mysqli_fetch_assoc($result)){
+                            // echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
+                            $id=$row['id'];
+                        }
+            
+            
+            if($_SESSION["admin"]==1) {
+                header("Location: administrator.php");
+                exit;
+            }
+?>
+            
+            <form method="POST">	
 			
 		<div  class="container-fluid">			
 			<table class="table table-borderless table-dark" align="center" >
@@ -16,9 +47,21 @@
 					</td>
 					
 					<td align="right">
-					
-					<a href="index.html" ><button type="button" class="btn btn-warning" >izloguj se</button></a>
 							
+					  <form method="post" action="<?php $_SERVER["PHP_SELF"]?>">
+                                <button type="submit" class="btn btn-warning" name="logout" >Izloguj se</button>
+                            </form><?php
+                                             
+                                                if(isset($_POST["logout"])) {
+                                                echo "<script type='text/javascript'>alert(".$row['id'].");</script>" ;
+
+                                                session_unset();
+                                                session_destroy();
+                                                header("Location: index.php");
+                                                exit;
+                                                 }
+                                              ?>
+                                            
 					</td>
 					<td></td>
 				</tr>
@@ -36,104 +79,210 @@
 					<table class="table table-bordered table-dark" align="center" >
 						<tr>
 							<td align="center">
-								<a href="slatko_sa_nalogom.html"  class="text-white">slatko ćoše</a>
+								<a href="slatko_sa_nalogom.php"  class="text-white">slatko ćoše</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="meso_sa_nalogom.html"  class="text-white">za mesojede</a>
+								<a href="meso_sa_nalogom.php"  class="text-white">za mesojede</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="testo_sa_nalogom.html" class="text-white">svakojaka testa</a>
+								<a href="testo_sa_nalogom.php" class="text-white">svakojaka testa</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="pocetna_sa_nalogom.html" class="text-white">sva jela</a>
+								<a href="pocetna_sa_nalogom.php" class="text-white">sva jela</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="izvrni_kuvar_sa_nalogom.html" class="text-danger">izvrsni kuvar</a>
+								<a href="izvrni_kuvar_sa_nalogom.php" class="text-danger">izvrsni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="odlični_kuvar_sa_nalogom.html" class="text-danger">odlični kuvar</a>
+								<a href="odlični_kuvar_sa_nalogom.php" class="text-danger">odlični kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="solidni_kuvar_sa_nalogom.html" class="text-danger">solidni kuvar</a>
+								<a href="solidni_kuvar_sa_nalogom.php" class="text-danger">solidni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="moj_nalog.html" class="text-info">moj nalog</a>
+								<a href="moj_nalog.php" class="text-info">moj nalog</a>
 							</td>
 						</tr>
 
 					</table>
 					</td>
-					<td  >
+					<td  align="left">
 					<table  align="center" >
-					
-							<tr>
-								<td align="center">
-									<img src="slike/sufle.jpg"  width="400"> </img>
-								</td>								
-								<td>
-									<table>
-									<tr>
-									<tr> <h5>Sufle <hr/></h5></h5></tr>
-Na tihoj vatri istopiti margarin i čokoladu da se dobije glatka masa. 2. Dok se to topi dobro umutiti 4 jajeta i postepeno dodati šećer. 3. U umućena jaja i šećer dodati rastopljenu masu.. 4.Kada se sve to dobro umuti dodati brašno, još malo mutiti, pa zatim u kalup za projice staviti papirne korpice, prečnika 6-7 cm, i u njih sipati masu do vrha. 5. Peći na temperaturi od 220&deg;C 7 min. dok se ne napravi tanka kora.									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o2"  /> 5			
-									<input type="radio" name="o2" /> 4	
-									<input type="radio" name="o2" /> 3	
-									<input type="radio" name="o2" /> 2	
-									<input type="radio" name="o2" /> 1	
-									<input type="radio" name="o2" checked /> bez ocene	&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" >sačuvaj</button>	
-&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>																	
-									</tr>
-									</table>
-								</td>
-							</tr>
-													<tr>
-								<td align="center">
-									<img src="slike/salata.jpg" width="400"> </img>
-								</td>
-								<td>
-									<table>
-									<tr>
-									<tr> <h5> Pileća salata  <hr/></h5></h5></tr>
-Pileće belo meso operite i osušite. Svako parče potopite u umućeno jaje, uvaljajte u kornfleks, poređajte u podmazan pleh obložen papirom za pečenje i pecite 20 minuta u rerni zagrejanoj na 100 stepeni, a zatim ostavite sa strane. Oba avokada prepolovite i uklonite im košticu. Kašičicom izvadite pulpu jednog avokada, pomešajte je sa sokom jednog limuna i snažno promešajte. Pulpu drugog avokada iseckajte na kriške, prelijte sokom preostalog limuna i sačuvajte za kasnije. Pripremljeni pire od avokada pomešajte sa majonezom, dodajte pikantni senf i kiselu pavlaku i sve sjedinite. Salatu operite, odvojte i prstima iscepkajte listove, pa preručite u veću posudu. Dodajte paradajz isečen na kriške, iseckani mladi luk, ohlađenu piletinu i kriške avokada. Posolite, dodajte pola količine pripremljenog preliva od avokada i majoneza i promešajte, a drugu polovinu prelijte preko salate. Do serviranja čuvajte u frižideru.
+                                            
+                                       
+<b>recepti sa ocenom većom od 2, manjom od 4</b>
+                                            
+                            <?php  
+                   include_once 'kontrola.php';
+                   ini_set("precision",3);
+             
+                   $indeksi=array();
+                   $i=0;
+                 //   echo "<script type='text/javascript'>alert('alalal');</script>"   ;
 
-									</tr>	
-									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o3"  /> 5			
-									<input type="radio" name="o3" /> 4	
-									<input type="radio" name="o3" /> 3	
-									<input type="radio" name="o3" /> 2	
-									<input type="radio" name="o3" /> 1	
-									<input type="radio" name="o3" checked /> bez ocene	&nbsp &nbsp &nbsp 
-<button type="button" class="btn btn-primary" >sačuvaj</button>		
-&nbsp &nbsp &nbsp
-									<button type="button" class="btn btn-danger" >prijavi</button>																
+ 
+                   $sql="SELECT * FROM recepti WHERE ocena<4 and ocena>=2";
+                   $result= mysqli_query($conn, $sql);
+                   
+                   if(mysqli_num_rows($result)>0){
+                       while($row= mysqli_fetch_assoc($result)){
+                           $indeksi[$i++]=$row['id'];
+                           echo '<tr> <td width="40%" align="center" >';
+                              echo '<img width="100%" src="'.$row['slika'] .'"></img></td>';
+                             echo '<td width="60%"><table> <tr> <h5> '.$row['ime'].'<hr/></h5></h5></tr>'.$row['sastojci'].'<hr/>'.$row['priprema'].'</td></tr><hr/> <h5> oceni </h5>
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="5" class="question_radio" /> &nbsp			
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="4" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="3" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="2" /> &nbsp
+									<input type="submit" class="btn btn-light" name="o'.$row['id'].'" value="1" /> 	
+										&nbsp &nbsp &nbsp 
+                                                                                <input type="submit" name="sacuvaj'.$row['id'].'" class="btn btn-primary" value="sačuvaj">		
+                                                                                &nbsp &nbsp &nbsp
+									<input type="submit" name="prijavi'.$row['id'].'" class="btn btn-danger" value="prijavi">										
 									</tr>
-									</table>
+                                 </table>
 								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-		
-			</table>
+							</tr></tr>';
+                             }
+                   }
+                       if($indeksi!=0)
+                foreach ($indeksi as $ind)    {
+                                       
+                    if(isset($_POST['sacuvaj'.$ind]))
+                    {
+                       
+                        $sql="SELECT * FROM sacuvano WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
+                        
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već sačuvan');</script>"    ;
+                        }
+                        else{
+                            $sql ="INSERT INTO sacuvano(idK,idR) VALUES($id,$ind)" ;
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }
+                   
+                    if(isset($_POST['o'.$ind])){
+                        $ocena=$_POST['o'.$ind];
+                    
+                        $sql="SELECT * FROM ko WHERE idK=".$id." and idR="."$ind";
+                        $result= mysqli_query($conn, $sql);
+                        
+                        if(mysqli_num_rows($result)>0)  {
+                            echo "<script type='text/javascript'>alert('recept je već ocenjen');</script>"    ;
+                        }
+                        else{
+                            $o=0;
+                            $num;
+                            $sql="INSERT INTO ko(idK,idR,ocena) VALUES($id,$ind,$ocena)";
+                            $result= mysqli_query($conn, $sql);
+                
+                            $sql="select count(idR) as sum from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
+                
+                            //ocenjivanje pojedinacnih recepata
+                
+                            $sql="select SUM(ocena) as sumO from ko where idR="."$ind" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
+                            $rez=$o/$num;
+                            // echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;
+                
+                            $sql="UPDATE recepti SET ocena=$rez WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
+                 
+                                 
+                            //ocenjivanje svih recepata korisnikaa   
+                  
+                  
+                            $idAutora;
+                            $sql="SELECT autor FROM recepti WHERE id=$ind";
+                            $result= mysqli_query($conn, $sql);
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $idAutora=$row['autor'];    
+                            }
+                
+                            // echo "<script type='text/javascript'>alert('".$idAutora."');</script>"   ;
+
+                  
+                            $sql="select SUM(ocena) as sumO from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
+                
+                            while($row= mysqli_fetch_assoc($result)){
+                                //  echo "<script type='text/javascript'>alert('".$row['sumO']."');</script>"   ;
+                                $o=$row['sumO'];    
+                            }
+                
+                            $sql="select count(id) as sum from recepti where autor="."$idAutora" ;
+                            $result= mysqli_query($conn, $sql);
+            
+                            while($row= mysqli_fetch_assoc($result)){
+                                //   echo "<script type='text/javascript'>alert('".$row['sum']."');</script>"   ;
+                                $num=$row['sum'];    
+                            }
+                
+                            $rez=$o/$num;
+                
+                            /* echo "<script type='text/javascript'>alert('".$num."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$o."');</script>"   ;
+                            echo "<script type='text/javascript'>alert('".$rez."');</script>"   ;*/
+
+
+                            $sql="UPDATE korisnik SET ocena=$rez WHERE id=$idAutora";
+                            $result= mysqli_query($conn, $sql);
+                        }
+                    }  
+                    
+                    if(isset($_POST["prijavi".$ind])) {
+                            
+                            $sql = "SELECT * FROM prijava";
+                            $result = mysqli_query($conn, $sql);
+                            
+                            while($row= mysqli_fetch_assoc($result)) {
+                                if($ind==$row['idR']&&$id==$row['idK']) {
+                                    echo "<script type='text/javascript'>alert('Vec ste prijavili ovaj recept');</script>";
+                                    exit;
+                                }
+                            }
+                            
+                            $sql = "INSERT INTO prijava(idR,idK) VALUES($ind,$id)";
+                            $result= mysqli_query($conn, $sql);
+                            
+                            if($result) echo "<script type='text/javascript'>alert('Nepozeljan sadrzaj je uspesno prijavljen');</script>";
+                            else echo "<script type='text/javascript'>alert('Greska u prijavi recepta');</script>";
+                        }
+                }
+                ?>
 		
 		</div>
+			</table>
+		
+                                            </form>
 		
 		
 	</body>

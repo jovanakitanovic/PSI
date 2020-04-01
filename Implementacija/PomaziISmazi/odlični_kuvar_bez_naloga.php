@@ -6,7 +6,8 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-			
+		 <?php $id=1;?>
+            <form method="POST">		
 		<div  class="container-fluid">			
 			<table class="table table-borderless table-dark" align="center" >
 				<tr>
@@ -17,7 +18,7 @@
 					
 					<td align="right">
 					
-					<a href="index.html" ><button type="button" class="btn btn-warning" >uloguj se</button></a>
+					<a href="index.php" ><button type="button" class="btn btn-warning" >uloguj se</button></a>
 							
 					</td>
 					<td></td>
@@ -36,95 +37,78 @@
 					<table class="table table-bordered table-dark" align="center" >
 						<tr>
 							<td align="center">
-								<a href="slatko.html"  class="text-white">slatko ćoše</a>
+								<a href="slatko.php"  class="text-white">slatko ćoše</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="meso.html"  class="text-white">za mesojede</a>
+								<a href="meso.php"  class="text-white">za mesojede</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="testo.html" class="text-white">svakojaka testa</a>
+								<a href="testo.php" class="text-white">svakojaka testa</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="pocetna_bez_naloga.html" class="text-success">sva jela</a>
+								<a href="pocetna_bez_naloga.php" class="text-success">sva jela</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="izvrni_kuvar_bez_naloga.html" class="text-danger">izvrsni kuvar</a>
+								<a href="izvrni_kuvar_bez_naloga.php" class="text-danger">izvrsni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="odlični_kuvar_bez_naloga.html" class="text-danger">odlični kuvar</a>
+								<a href="odlični_kuvar_bez_naloga.php" class="text-danger">odlični kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="solidni_kuvar_bez_naloga.html" class="text-danger">solidni kuvar</a>
+								<a href="solidni_kuvar_bez_naloga.php" class="text-danger">solidni kuvar</a>
 							</td>
 						</tr>
 
 
 					</table>
 					</td>
-					<td  >
+					<td  align="left">
 					<table  align="center" >
-					
-							<tr>
-								<td align="center">
-									<img src="slike/sufle.jpg"  width="400"> </img>
-								</td>								
-								<td>
-									<table>
-									<tr>
-									<tr> <h5>Sufle <hr/></h5></h5></tr>
-Na tihoj vatri istopiti margarin i čokoladu da se dobije glatka masa. 2. Dok se to topi dobro umutiti 4 jajeta i postepeno dodati šećer. 3. U umućena jaja i šećer dodati rastopljenu masu.. 4.Kada se sve to dobro umuti dodati brašno, još malo mutiti, pa zatim u kalup za projice staviti papirne korpice, prečnika 6-7 cm, i u njih sipati masu do vrha. 5. Peći na temperaturi od 220&deg;C 7 min. dok se ne napravi tanka kora.									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o2"  /> 5			
-									<input type="radio" name="o2" /> 4	
-									<input type="radio" name="o2" /> 3	
-									<input type="radio" name="o2" /> 2	
-									<input type="radio" name="o2" /> 1	
-									<input type="radio" name="o2" checked /> bez ocene											
-									</tr>
-									</table>
-								</td>
-							</tr>
-													<tr>
-								<td align="center">
-									<img src="slike/salata.jpg" width="400"> </img>
-								</td>
-								<td>
-									<table>
-									<tr>
-									<tr> <h5> Pileća salata  <hr/></h5></h5></tr>
-Pileće belo meso operite i osušite. Svako parče potopite u umućeno jaje, uvaljajte u kornfleks, poređajte u podmazan pleh obložen papirom za pečenje i pecite 20 minuta u rerni zagrejanoj na 100 stepeni, a zatim ostavite sa strane. Oba avokada prepolovite i uklonite im košticu. Kašičicom izvadite pulpu jednog avokada, pomešajte je sa sokom jednog limuna i snažno promešajte. Pulpu drugog avokada iseckajte na kriške, prelijte sokom preostalog limuna i sačuvajte za kasnije. Pripremljeni pire od avokada pomešajte sa majonezom, dodajte pikantni senf i kiselu pavlaku i sve sjedinite. Salatu operite, odvojte i prstima iscepkajte listove, pa preručite u veću posudu. Dodajte paradajz isečen na kriške, iseckani mladi luk, ohlađenu piletinu i kriške avokada. Posolite, dodajte pola količine pripremljenog preliva od avokada i majoneza i promešajte, a drugu polovinu prelijte preko salate. Do serviranja čuvajte u frižideru.
-
-									</tr>	
-									<tr>	<hr/> <h5> oceni </h5>
-									<input type="radio" name="o3"  /> 5			
-									<input type="radio" name="o3" /> 4	
-									<input type="radio" name="o3" /> 3	
-									<input type="radio" name="o3" /> 2	
-									<input type="radio" name="o3" /> 1	
-									<input type="radio" name="o3" checked /> bez ocene											
-									</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
+                                            
+                                      
+<b>recepti sa ocenom većom od 2, manjom od 4</b>
 		
-			</table>
+                                            
+                            <?php  
+                   include_once 'kontrola.php';
+                   ini_set("precision",3);
+             
+                   $indeksi=array();
+                   $i=0;
+                 //   echo "<script type='text/javascript'>alert('alalal');</script>"   ;
+
+ 
+                   $sql="SELECT * FROM recepti WHERE ocena<4 and ocena>=2";
+                   $result= mysqli_query($conn, $sql);
+                   
+                   if(mysqli_num_rows($result)>0){
+                       while($row= mysqli_fetch_assoc($result)){
+                           $indeksi[$i++]=$row['id'];
+                           echo '<tr> <td width="40%" align="center" >';
+                              echo '<img width="100%" src="'.$row['slika'] .'"></img></td>';
+                             echo '<td width="60%"><table> <tr> <h5> '.$row['ime'].'<hr/></h5></h5></tr>'.$row['sastojci'].'<hr/>'.$row['priprema'].'</td></tr><tr>								
+									</tr>
+									</table>
+								</td>
+							</tr></tr>';
+                             }
+                   }
+                ?>
 		
 		</div>
-		
+			</table>
 		
 	</body>
 

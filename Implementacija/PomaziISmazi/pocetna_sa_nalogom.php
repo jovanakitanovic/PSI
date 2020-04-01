@@ -70,42 +70,42 @@
 					<table class="table table-bordered table-dark" align="center" >
 						<tr>
 							<td align="center">
-								<a href="slatko_sa_nalogom.php"  class="text-white">Slatko ćoše</a>
+								<a href="slatko_sa_nalogom.php"  class="text-white">slatko ćoše</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="meso_sa_nalogom.php"  class="text-white">Za mesojede</a>
+								<a href="meso_sa_nalogom.php"  class="text-white">za mesojede</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="testo_sa_nalogom.php" class="text-white">Svakojaka testa</a>
+								<a href="testo_sa_nalogom.php" class="text-white">svakojaka testa</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="pocetna_sa_nalogom.php" class="text-success">Sva jela</a>
+								<a href="pocetna_sa_nalogom.php" class="text-success">sva jela</a>
 							</td>
 						</tr>
 												<tr>
 							<td align="center">
-								<a href="izvrni_kuvar_sa_nalogom.php" class="text-danger">Izvrsni kuvar</a>
+								<a href="izvrni_kuvar_sa_nalogom.php" class="text-danger">izvrsni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="odlični_kuvar_sa_nalogom.php" class="text-danger">Odlični kuvar</a>
+								<a href="odlični_kuvar_sa_nalogom.php" class="text-danger">odlični kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="solidni_kuvar_sa_nalogom.php" class="text-danger">Solidni kuvar</a>
+								<a href="solidni_kuvar_sa_nalogom.php" class="text-danger">solidni kuvar</a>
 							</td>
 						</tr>
 						<tr>
 							<td align="center">
-								<a href="moj_nalog.php" class="text-info">Moj nalog</a>
+								<a href="moj_nalog.php" class="text-info">moj nalog</a>
 							</td>
 						</tr>
 					</table>
