@@ -30882,9 +30882,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:OBJ name="OwnedViews[0]" type="UMLCombinedFragmentView" guid="M3jmRkT9oUKA43Z3jSEmZwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">24</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">92</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">132</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">1117</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">1049</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">501</XPD:ATTR>
 <XPD:REF name="Model">qoU/+f9ZLUmAZ7NysirQqAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="wib51MUENU6bLrs60LbKlwAA">
@@ -30898,9 +30898,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="fSllepr120O69SuvqiBoZwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">24</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">92</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">332</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">1117</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">1049</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">301</XPD:ATTR>
 <XPD:REF name="Model">k1VB7k7Wzk66adQ0DUf6vQAA</XPD:REF>
 <XPD:REF name="ContainerView">M3jmRkT9oUKA43Z3jSEmZwAA</XPD:REF>
@@ -30911,9 +30911,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:OBJ name="ContainedViews[1]" type="UMLInteractionOperandView" guid="PBhpqWCjnkmWtmYLB+XjAwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">24</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">92</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">152</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">1117</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">1049</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">181</XPD:ATTR>
 <XPD:REF name="Model">FN+hreB5W0ezHukfeApzSQAA</XPD:REF>
 <XPD:REF name="ContainerView">M3jmRkT9oUKA43Z3jSEmZwAA</XPD:REF>
