@@ -1510,7 +1510,7 @@ kao i da odustane od cuvanja pojedinog sadržaja -&gt; izbacivanje sacuvanog sad
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">384,704;384,764;195,764</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">384,704;384,788;195,788</XPD:ATTR>
 <XPD:REF name="Model">R+8loj7JnUyMjBjr86g0PgAA</XPD:REF>
 <XPD:REF name="Head">8auqu2JoZEOExxbOvA9M9gAA</XPD:REF>
 <XPD:REF name="Tail">xKoP3o5kxk2kHoKqQLTlhAAA</XPD:REF>
@@ -14861,9 +14861,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">12</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">740</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">743</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1405</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">189</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">186</XPD:ATTR>
 <XPD:REF name="Model">4syi+WIR/UK8Qo4wXejBxQAA</XPD:REF>
 <XPD:REF name="ContainerView">avE5iyU1y02I2HSQWBmPSgAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="38lenEfdNECU0fPnhmv1ugAA">
@@ -14891,9 +14891,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">16</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">972</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">975</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1404</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">176</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">173</XPD:ATTR>
 <XPD:REF name="Model">298U0EJq/Em8WjvjQkQBLgAA</XPD:REF>
 <XPD:REF name="ContainerView">OSAbvUVXkkWeAhvNkr0l5QAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="8WWNzK1qWkqVkCu3LCIWsQAA">
@@ -14921,9 +14921,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">20</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">1200</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">1203</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1400</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">152</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">149</XPD:ATTR>
 <XPD:REF name="Model">CWUsFlnj1Emjq1LTR0mmBQAA</XPD:REF>
 <XPD:REF name="ContainerView">3zuzz0T7cUmbTbadXqnQXwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="rUrWIZzNDUeuiwUHr9FFwgAA">
@@ -14967,9 +14967,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">20</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">1564</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">1567</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1400</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">145</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">142</XPD:ATTR>
 <XPD:REF name="Model">NaaQzXhG70ed0heVy9rVKwAA</XPD:REF>
 <XPD:REF name="ContainerView">vp1oe99k2Emuck89E/MMBwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="rejQEn3g9EyLAJzbuoASHwAA">
@@ -14997,9 +14997,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">16</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">1748</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">1751</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1396</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">325</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">322</XPD:ATTR>
 <XPD:REF name="Model">U+9k5VCCUkeTQ/AwiF/MywAA</XPD:REF>
 <XPD:REF name="ContainerView">oeYh87MmSUegFyCyGkrXFAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="7yg9dqSYTEeNXaYq/6fG2wAA">
@@ -15027,9 +15027,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">16</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2120</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2123</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1396</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">329</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">326</XPD:ATTR>
 <XPD:REF name="Model">60DwMlCXQUKOQ8jl75UCoAAA</XPD:REF>
 <XPD:REF name="ContainerView">rhbe4xA5dU6niGDjDF5wsAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="S3BWfZ8YCE65fTZ5ntnamQAA">
@@ -15057,9 +15057,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">16</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2500</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2503</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1392</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">301</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">298</XPD:ATTR>
 <XPD:REF name="Model">9jNNSD/jwUigB3ekjFmoRwAA</XPD:REF>
 <XPD:REF name="ContainerView">FgOTLv1jCE+xfbLWwqWEOQAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="FiuMVnJo9EGoVjQczGSkzQAA">
@@ -15087,9 +15087,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">16</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2852</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2855</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1388</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">321</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">318</XPD:ATTR>
 <XPD:REF name="Model">nLlVj8xYRES0ql2ywkZqHgAA</XPD:REF>
 <XPD:REF name="ContainerView">b/ziPupA60eMgx1VeSADvwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="QE1r2Pc4uUWMw/iv07j4/AAA">
@@ -15117,9 +15117,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">600</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">1940</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">1943</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">809</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">100</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">97</XPD:ATTR>
 <XPD:REF name="Model">/JkKzOcwdk6zVWzV4b8b1AAA</XPD:REF>
 <XPD:REF name="ContainerView">eDWveQ/uwk+rNfuKp2R80gAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="cSxqBUhglEWVVWrLtd8fxwAA">
@@ -15147,9 +15147,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">616</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2336</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2339</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">796</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">81</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">78</XPD:ATTR>
 <XPD:REF name="Model">omB8CAh2gEGrmtx/b4x6gAAA</XPD:REF>
 <XPD:REF name="ContainerView">f0fn12O5cUO6kvkxWCZLHwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="HOpLz0plgU+bprMwVLqKpgAA">
@@ -15177,9 +15177,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">592</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2696</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2699</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">804</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">57</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">54</XPD:ATTR>
 <XPD:REF name="Model">7h0u0rICakS5pwwol8n6JgAA</XPD:REF>
 <XPD:REF name="ContainerView">aPSXhq+OF0a6J1EAOcDlhAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="lY9m2gG7Dky+tisw4dWB2gAA">
@@ -15207,9 +15207,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">584</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3052</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3055</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">817</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">77</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">74</XPD:ATTR>
 <XPD:REF name="Model">aIYtzR/zjUaASOksoSPdgQAA</XPD:REF>
 <XPD:REF name="ContainerView">9FOwx79y2UW3+OSuDlpw6wAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="qOP2Ylbeo02DuFlO7Is1gwAA">
@@ -15237,9 +15237,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">24</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3208</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3211</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1380</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">284</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">281</XPD:ATTR>
 <XPD:REF name="Model">4WMX+BMfVUK9I3RPUU2smQAA</XPD:REF>
 <XPD:REF name="ContainerView">WGGp6170kUSta5+AW5rYMgAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="wu/0PGVt/E+KbY2w1sIrMQAA">
@@ -15267,9 +15267,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">28</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3540</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3543</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1376</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">308</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">305</XPD:ATTR>
 <XPD:REF name="Model">xJncBIpMbEKmQwenPD6PgwAA</XPD:REF>
 <XPD:REF name="ContainerView">uPD28cwP8kyET0W2F9sNkAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="u9YFaAh3u0GH6VKQxeunpAAA">
@@ -15297,9 +15297,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">580</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3356</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3359</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">820</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">61</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">58</XPD:ATTR>
 <XPD:REF name="Model">DDDRDt3/HEO+NeUCQE8lLAAA</XPD:REF>
 <XPD:REF name="ContainerView">hM7sEZ9IwUa2glJYMtmlyQAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="fvlpIS7mKk6mNsp0u/OGeQAA">
@@ -15327,9 +15327,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">580</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3728</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3731</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">816</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">49</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">46</XPD:ATTR>
 <XPD:REF name="Model">I/wBy6NudEa2XmXZjXltTgAA</XPD:REF>
 <XPD:REF name="ContainerView">XAODU4/ieEKIlvSnvgCmsAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="Qamqo2fQukO1r3tciBMSNAAA">
@@ -15357,9 +15357,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">32</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">3900</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">3903</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1376</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">125</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">122</XPD:ATTR>
 <XPD:REF name="Model">DGbLcF3ju0yVeCW+5TOm0QAA</XPD:REF>
 <XPD:REF name="ContainerView">xLR2hrOddUuwFQIX5ghLwAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="LRPV+cx98UaeC4bRlmMj0wAA">
@@ -15387,9 +15387,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">32</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4056</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4059</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1388</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">121</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">118</XPD:ATTR>
 <XPD:REF name="Model">owi1Yas5Bki+rawXOS6ZjAAA</XPD:REF>
 <XPD:REF name="ContainerView">zIsTq144iEWAr/hVwIWfDAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="yjEZiHa+J0q0iMMMwb3YigAA">
@@ -15417,9 +15417,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">36</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4220</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4223</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1384</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">121</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">118</XPD:ATTR>
 <XPD:REF name="Model">TKEP64mBMUGVATfBmvqJmwAA</XPD:REF>
 <XPD:REF name="ContainerView">HKZxvRtul0mop48Bv75SBAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="ZdeB8bdIxUqxw4wroB71jwAA">
@@ -15447,9 +15447,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">36</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4380</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4383</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1384</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">265</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">262</XPD:ATTR>
 <XPD:REF name="Model">FEeQXhXuwEi0hb2RFy9opwAA</XPD:REF>
 <XPD:REF name="ContainerView">VLlT3F6Si0i449lIWHZTFgAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="xONaLno6j0SuJmsP0y56uwAA">
@@ -15477,9 +15477,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">32</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4684</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4687</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">1380</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">297</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">294</XPD:ATTR>
 <XPD:REF name="Model">24b3iZZhZEumQUWMkIunYgAA</XPD:REF>
 <XPD:REF name="ContainerView">uFy8PajmkU6eZwuE01JCCQAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="Z8plNAbQH0uxtSe/fDyuBQAA">
@@ -15507,9 +15507,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">728</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4552</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4555</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">689</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">57</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">54</XPD:ATTR>
 <XPD:REF name="Model">1S5tQJUz40eGeYyNWtEROAAA</XPD:REF>
 <XPD:REF name="ContainerView">B26LbNurIkiZbYR4WivntgAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="flZJVxV4106dgGYwP7ajBAAA">
@@ -15537,9 +15537,9 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">700</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">4856</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4859</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">712</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">61</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">58</XPD:ATTR>
 <XPD:REF name="Model">rLTj8deU/kWBqacnbzc89wAA</XPD:REF>
 <XPD:REF name="ContainerView">69y1u3Vh2kmzZxUqP/SK2gAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="OJA7j3jd9EmC0PD3bemotwAA">
@@ -15625,10 +15625,10 @@ ali ne interaguje direktno sa kontrolerom Korisnik i kontrolerom Gost vec poziva
 <XPD:OBJ name="OwnedViews[28]" type="UMLSeqObjectView" guid="DpmThWj7lk2QGXsV6dG4OgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">1032</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">648</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">1020</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">380</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">150</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">4345</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">4617</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">YXh98XPp40yBUO6YWOHGtQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="jfT80zPnKkWu5ID/uFBs9AAA">
@@ -19904,7 +19904,7 @@ moja jela
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">812,4448;1100,4448</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">812,4448;1088,4448</XPD:ATTR>
 <XPD:REF name="Model">kqWoSlZnjUa1j9yNVWtgaQAA</XPD:REF>
 <XPD:REF name="Head">YhUi8PZ0ek28qRa6zZMxEQAA</XPD:REF>
 <XPD:REF name="Tail">YFGOnmoQrkmmdLCn1mEnWQAA</XPD:REF>
@@ -19930,7 +19930,7 @@ moja jela
 <XPD:REF name="HostEdge">JYpNEFUdpkKlm/uMDnPbBQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="EVyQhLZO8U+s+RqcR8CstAAA">
-<XPD:ATTR name="Left" type="integer">1100</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">1088</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">4448</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -19940,7 +19940,7 @@ moja jela
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1100,4472;812,4472</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1088,4472;812,4472</XPD:ATTR>
 <XPD:REF name="Model">GegAUggiv061V+aZvEyynQAA</XPD:REF>
 <XPD:REF name="Head">YFGOnmoQrkmmdLCn1mEnWQAA</XPD:REF>
 <XPD:REF name="Tail">YhUi8PZ0ek28qRa6zZMxEQAA</XPD:REF>
@@ -20304,7 +20304,7 @@ moja jela
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">812,4797;1100,4797</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">812,4797;1088,4797</XPD:ATTR>
 <XPD:REF name="Model">AOmQXksZqU+houi65j9ASwAA</XPD:REF>
 <XPD:REF name="Head">YhUi8PZ0ek28qRa6zZMxEQAA</XPD:REF>
 <XPD:REF name="Tail">YFGOnmoQrkmmdLCn1mEnWQAA</XPD:REF>
@@ -20330,7 +20330,7 @@ moja jela
 <XPD:REF name="HostEdge">AR44MEEybUaYjuVuZ29r1QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="Jd1s9c+J70qo7apHYq/LeQAA">
-<XPD:ATTR name="Left" type="integer">1100</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">1088</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">4797</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -20340,7 +20340,7 @@ moja jela
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1100,4816;812,4816</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1088,4816;812,4816</XPD:ATTR>
 <XPD:REF name="Model">EGlvBFsWlEO4Z8dBr4zuVAAA</XPD:REF>
 <XPD:REF name="Head">YFGOnmoQrkmmdLCn1mEnWQAA</XPD:REF>
 <XPD:REF name="Tail">YhUi8PZ0ek28qRa6zZMxEQAA</XPD:REF>
@@ -28345,7 +28345,7 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">64</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">152</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">155</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">880</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">317</XPD:ATTR>
 <XPD:REF name="Model">SqV8JuXGYkCKvtBsNDt1pQAA</XPD:REF>
@@ -28358,9 +28358,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">64</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">468</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">471</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">880</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">129</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">126</XPD:ATTR>
 <XPD:REF name="Model">lz1ArmiqbUWAMrH73EuXgQAA</XPD:REF>
 <XPD:REF name="ContainerView">usRtBmI5wEyXx8Gs+fO3xwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="QyqgXgWbGUCz9TfI5aEnogAA">
@@ -28388,7 +28388,7 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">68</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">236</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">239</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">801</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">53</XPD:ATTR>
 <XPD:REF name="Model">05kcZkhCDEKLoFQxFjqD8gAA</XPD:REF>
@@ -28401,9 +28401,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">68</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">288</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">291</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">801</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">169</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">166</XPD:ATTR>
 <XPD:REF name="Model">L4Zo8XvUWUubOEPywcCaAgAA</XPD:REF>
 <XPD:REF name="ContainerView">tTZi+ardVUKrfX0KjeIFPwAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="wRPU9HJbEEe9WcrWUKFmlAAA">
@@ -29507,7 +29507,7 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">28</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">144</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">147</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">893</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">477</XPD:ATTR>
 <XPD:REF name="Model">2CyPqUodkEOAleDxNT9vlAAA</XPD:REF>
@@ -29537,7 +29537,7 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">36</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">240</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">243</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">865</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">53</XPD:ATTR>
 <XPD:REF name="Model">0Nx1w6lg3EGEFSYuWku8ywAA</XPD:REF>
@@ -29550,9 +29550,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">36</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">292</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">295</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">865</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">317</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">314</XPD:ATTR>
 <XPD:REF name="Model">7HWWRiPn70WdDLqR4sJQtAAA</XPD:REF>
 <XPD:REF name="ContainerView">OtFzWn6UcEawAWuI5mp1egAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="RHiVlZbaHE2GQvavm4nq/AAA">
@@ -29580,7 +29580,7 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">44</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">440</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">443</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">764</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">57</XPD:ATTR>
 <XPD:REF name="Model">5IQuAjHnZkiV4HSGoG2pHQAA</XPD:REF>
@@ -29593,9 +29593,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">44</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">496</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">499</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">764</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">101</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">98</XPD:ATTR>
 <XPD:REF name="Model">EkXkXQTBBE26SavfYfEIpgAA</XPD:REF>
 <XPD:REF name="ContainerView">/1RH9aUZEUS+qnC6vV5mZAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="4s/tSp8rKUOwnMLeWb47owAA">
@@ -29610,9 +29610,9 @@ IdKorisnika se preuzima iz sesije a idRecepta is URL-a
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">28</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">620</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">623</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">893</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">97</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">94</XPD:ATTR>
 <XPD:REF name="Model">TWZqnco3Eku0e3kXqDhwEQAA</XPD:REF>
 <XPD:REF name="ContainerView">mtdT6AXWAkW4ftdGST66TAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="PhkyVQSOiEy9q0x8xWSawgAA">
