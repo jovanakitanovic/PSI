@@ -14,7 +14,6 @@ use CodeIgniter\Model;
  * @version 1.0
  */
 
-
 class ReceptiModel extends Model
 {
         protected $table      = 'recepti';

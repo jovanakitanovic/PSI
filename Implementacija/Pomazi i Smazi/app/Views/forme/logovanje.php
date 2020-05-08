@@ -35,14 +35,30 @@
 
         <div class="container-fluid">
             <table class="table table-borderless table-dark" align="center" >
+            
+            <form action="<?= site_url("Korisnik/login_provera") ?>" method="post">
 
                 <tr >
                     <td align="right" width="50%">
                         username
                     </td>
                     <td align="left">
-                        <input type="text" id="fname" name="fname">
+                        <input type="text" id="fname" name="username" value="<?= set_value('username') ?>">
                     </td>
+                    <td align='left'><font color='red'>
+                    <?php 
+                        if(!empty($GLOBALS['error'])) {
+                            $errors = $GLOBALS['error'];
+                            if(!empty($errors['username'])) {
+                                echo "Niste popunili polje username!<br>";
+                                unset($GLOBALS['error']['username']);
+                            }
+                            if(!empty($errors['user'])) {
+                                echo $errors['user'];
+                                unset($GLOBALS['error']['user']);
+                            }
+                        }
+                    ?></font></td>
                 </tr>
 
                 <tr>
@@ -50,15 +66,28 @@
                         password
                     </td>
                     <td align="left">
-                        <input type="password" id="fname" name="fname">
+                        <input type="password" id="fname" name="password">
                     </td>
+                    <td align='left'><font color='red'>
+                    <?php
+                        if(!empty($GLOBALS['error'])) {
+                            $errors = $GLOBALS['error'];
+                            if(!empty($errors['password'])) {
+                                echo "Niste popunili polje password!<br>";
+                                unset($GLOBALS['error']['password']);
+                            }
+                            if(!empty($errors['pass'])) {
+                                echo $errors['pass'];
+                                unset($GLOBALS['error']['pass']);
+                            }
+                        }
+                    ?></font></td>
                 </tr>
 
                 <tr>
                     <td align="right" width="50%"> 
-                        <form action="<?= site_url("Korisnik/login_provera") ?>" method="post">
                           <input type="submit" class="btn btn-primary" name="ulogujse" value="uloguj se">
-                         </form>
+            </form>
                     </td>
                     <td align="left">
                          <form action="<?= site_url("Korisnik/napravi_nalog") ?>" method="post">

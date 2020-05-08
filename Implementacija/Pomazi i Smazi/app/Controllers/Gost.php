@@ -13,7 +13,7 @@ use App\Models\PrijavaModel;
 /**
  * Gost - klasa zadužena za prikaz odgovarajuće početne stranice neprivilegovanog korisnika i obavljanja logovanja i registracije novog korisnika
  *
- * @version 1.1
+ * @version 1.2
  */
 
 class Gost extends BaseController
@@ -26,16 +26,16 @@ class Gost extends BaseController
          
          $this->prikaz_stranice();
 	}
-        
+     
 /**
  * Funkcija koja na osnovu izbora kategorije filtriranja prikuplja podatke i otvara odgovaarajucu stranicu
  *
  * varijanta Gost
  *
- * @version 1.0
+ * @version 1.1
  */
-		
-        public function prikaz_stranice()
+ 
+    public function prikaz_stranice()
         {
          
         
@@ -57,7 +57,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-            $body='body_gost';
+            $body='body_B';
             break;
             
             case 'za_mesojede':
@@ -69,7 +69,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';
+             $body='body_B';
             break;    
           
             case 'svakojaka_testa':
@@ -81,7 +81,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';
+             $body='body_B';
             break;    
             
             case 'izvrsni_kuvar':
@@ -93,7 +93,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';
+             $body='body_B';
             break;    
 
             case 'odlicni_kuvar':
@@ -105,7 +105,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';
+             $body='body_B';
             break;  
             
             case 'solidni_kuvar':
@@ -117,7 +117,7 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';     //treba da se doda ona linija sa ocenom
+             $body='body_B';     //treba da se doda ona linija sa ocenom
             break;  
             
             case 'moja_jela':
@@ -129,12 +129,12 @@ class Gost extends BaseController
                 $i++;
                 }
             }
-             $body='body_gost';  //
+             $body='body_B';  //
             break; 
 
             
         default :
-            $body='body_gost';
+            $body='body_B';
             $recepti=$svi_recepti;
             break;
         }
@@ -145,14 +145,13 @@ class Gost extends BaseController
         echo view("stranice/meni_stranice/".$_GET['meni']);
         echo view("stranice/body/".$body,$data);       //nisam sigurna kako ovo da napravim.
         }
-        
-		
+
 /**
  * Funkcija koja otvara stranicu za logovanje
  *
  * @version 1.0
  */
-		
+ 
         public function login(){                    // u suštini isto kao i Korisnik/logout samo što je ovako lepše spakovano
              echo view("forme/logovanje");
         }

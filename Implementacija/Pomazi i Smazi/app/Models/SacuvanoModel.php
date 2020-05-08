@@ -3,7 +3,7 @@
 /**
  * Autor: Jovana Kitanovic 0603/17
  *
- * @version 1.0
+ * @version 1.1
  */
 
 use CodeIgniter\Model;
@@ -16,20 +16,10 @@ use CodeIgniter\Model;
 
 class SacuvanoModel extends Model                       
 {
-        protected $table      = 'users';
-        protected $primaryKey = 'id';
+        protected $table      = 'sacuvano';
+       // protected $primaryKey = 'id';
 
-        protected $returnType = 'array';
-        protected $useSoftDeletes = true;
+        protected $returnType = 'object';
+        protected $allowedFields = ['idR', 'idK'];
 
-        protected $allowedFields = ['name', 'email'];
-
-        protected $useTimestamps = false;
-        protected $createdField  = 'created_at';
-        protected $updatedField  = 'updated_at';
-        protected $deletedField  = 'deleted_at';
-
-        protected $validationRules    = [];
-        protected $validationMessages = [];
-        protected $skipValidation     = false;
 }

@@ -3,7 +3,7 @@
 /**
  * Autor: Jovana Kitanovic 0603/17
  *
- * @version 1.0
+ * @version 1.1
  */
 
 use CodeIgniter\Model;
@@ -11,26 +11,18 @@ use CodeIgniter\Model;
 /**
  * Klasa koja predstavlja konekciju sa bazom, konkretno, tabelom korsnik, takođe, sadrži funkcije za rad sa tabelom
  *
- * @version 1.0
+ * @version 1.1
  */
-
 
 class KorisnikModel extends Model
 {
-        protected $table      = 'users';
+        protected $table      = 'korisnik';
         protected $primaryKey = 'id';
-
         protected $returnType = 'array';
-        protected $useSoftDeletes = true;
-
-        protected $allowedFields = ['name', 'email'];
-
-        protected $useTimestamps = false;
-        protected $createdField  = 'created_at';
-        protected $updatedField  = 'updated_at';
-        protected $deletedField  = 'deleted_at';
-
-        protected $validationRules    = [];
-        protected $validationMessages = [];
-        protected $skipValidation     = false;
+        
+        protected $allowedFields = ['ime', 'prezime', 'username', 'sifra', 'admin'];
+        
+        public function pretragaUsername($username) {
+            return $this->where('username', $username)->findAll();
+        }
 }

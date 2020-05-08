@@ -14,7 +14,6 @@ use CodeIgniter\Model;
  * @version 1.0
  */
 
-
 class PrijavaModel extends Model
 {
         protected $table      = 'users';

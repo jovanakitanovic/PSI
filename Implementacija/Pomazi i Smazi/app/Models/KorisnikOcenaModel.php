@@ -3,35 +3,23 @@
 /**
  * Autor: Jovana Kitanovic 0603/17
  *
- * @version 1.0
+ * @version 1.1
  */
-
 
 use CodeIgniter\Model;
 
 /**
  * Klasa koja predstavlja konekciju sa bazom, konkretno, tabelom korisnikocena, takođe, sadrži funkcije za rad sa tabelom
  *
- * @version 1.0
+ * @version 1.1
  */
-
 
 class KorisnikOcenaModel extends Model
 {
-        protected $table      = 'users';
-        protected $primaryKey = 'id';
+        protected $table      = 'korisnikocena';
+       // protected $primaryKey = 'id';
 
-        protected $returnType = 'array';
-        protected $useSoftDeletes = true;
+        protected $returnType = 'object';
+        protected $allowedFields = ['idR', 'idK'];
 
-        protected $allowedFields = ['name', 'email'];
-
-        protected $useTimestamps = false;
-        protected $createdField  = 'created_at';
-        protected $updatedField  = 'updated_at';
-        protected $deletedField  = 'deleted_at';
-
-        protected $validationRules    = [];
-        protected $validationMessages = [];
-        protected $skipValidation     = false;
 }
