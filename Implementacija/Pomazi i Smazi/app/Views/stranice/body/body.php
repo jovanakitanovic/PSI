@@ -4,15 +4,15 @@
      
            <?php  
                       
-           if($_GET['izbor']=='izvrsni_kuvar'){
+           if($_SESSION['izbor']=='izvrsni_kuvar'){
             echo "<h5>recepti sa ocenom vecom od 4 </h5>";
             echo "<hr/>";
            }
-           if($_GET['izbor']=='odlicni_kuvar'){
+           if($_SESSION['izbor']=='odlicni_kuvar'){
             echo "<h5>recepti sa ocenom vecom od 2, a manjom od 4 </h5>";
             echo "<hr/>";
            }
-           if($_GET['izbor']=='solidni_kuvar'){
+           if($_SESSION['izbor']=='solidni_kuvar'){
             echo "<h5>recepti sa ocenom manjom od 2 </h5>";
             echo "<hr/>";
            }
@@ -45,27 +45,27 @@
 
            echo "{$recept->priprema}  <hr/>";
            
-           echo anchor("Korisnik/ocenjivanje/{$recept->id}/1", "<input type='button' class='btn btn-light'  value='1' />");
+           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=1", "<input type='button' class='btn btn-light'  value='1' />");
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='1' />&nbsp	";    
         
-           echo anchor("Korisnik/ocenjivanje/{$recept->id}/2", "<input type='button' class='btn btn-light'  value='2' />");
+           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=2", "<input type='button' class='btn btn-light'  value='2' />");
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='2' /> &nbsp	";
        
-           echo anchor("Korisnik/ocenjivanje/{$recept->id}/3", "<input type='button' class='btn btn-light'  value='3' />");
+           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=3", "<input type='button' class='btn btn-light'  value='3' />");
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='3' /> &nbsp	";
         
-           echo anchor("Korisnik/ocenjivanje/{$recept->id}/4", "<input type='button' class='btn btn-light'  value='4' />");
+           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=4", "<input type='button' class='btn btn-light'  value='4' />");
            echo "&nbsp";
          //  echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='4' /> &nbsp";
          
-         //echo anchor("Korisnik/ocenjivanje?id={$recept->id}&ocena=5", "<input type='button' class='btn btn-light'  value='5' />");
-          //echo "&nbsp &nbsp ";
-           echo "<input type='submit' class='btn btn-light' name="."o$recept->id"." value='5' /> &nbsp &nbsp ";
+         echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=5", "<input type='button' class='btn btn-light'  value='5' />");
+         echo "&nbsp &nbsp ";
+           //echo "<input type='submit' class='btn btn-light' name="."o$recept->id"." value='5' /> &nbsp &nbsp ";
          
-           echo anchor("Korisnik/sacuvaj/{$recept->id}", "<input type='button' class='btn btn-primary'  value='sačuvaj' />");
+           echo anchor("Korisnik/sacuvaj?id=$recept->id", "<input type='button' class='btn btn-primary'  value='sačuvaj' />");
            echo "&nbsp &nbsp ";
            //echo "<input type='submit' name="."sacuvaj$recept->id"."  class='btn btn-primary' value='sačuvaj'> &nbsp &nbsp";   
            

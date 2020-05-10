@@ -225,7 +225,7 @@ class Korisnik extends BaseController {
            case 'sacuvana_jela':                     //za ovo treba da popunim tabelu sa receptima koje cuvam da bih mogla da uzmem recepte
                 $i=0;
                $id=$_SESSION['id'];
-               
+              
             $sacuvano = ['idK' => $id];
             $sacuvanoModel=new SacuvanoModel();
             $sacuvani= $sacuvanoModel->getWhere($sacuvano);
@@ -342,7 +342,7 @@ class Korisnik extends BaseController {
  * Upamceni recepti ce biti prikazani na stranici "sacuvano"
  *
  *
- * @version 1.1
+ * @version 1.2
  */	
     
     public function sacuvaj()
@@ -383,14 +383,31 @@ class Korisnik extends BaseController {
 /**
  * Funkcija zaduzena za izbacivanje recepta iz tabele sacuvanih recepata
  *
- * @version 1.0
+ * @version 1.1
  * 
  */
     
-    public function izbaci(){
+     public function izbaci(){
         if(isset($_SESSION['id']))  {
             
+            $sacuvanoModel=new SacuvanoModel();
+            
+            $idk=$_SESSION['id'];
+            $idr=$_GET['id'];
 
+            
+            $sacuvano=['idK'=>$idk,'idR'=>$idr];
+
+
+            $provera = $sacuvanoModel->getWhere($sacuvano);
+            $provera = $provera->getResultObject();
+            
+           $sacuvanoModel->where('idK', $idk); 
+           $sacuvanoModel->where('idR', $idr); 
+           $sacuvanoModel->delete();
+            
+            $this->prikaz_stranice();
+            
         }
           else
           $this->index_stranica ();
@@ -402,10 +419,10 @@ class Korisnik extends BaseController {
  * Upamceni recepti ce biti prikazani na stranici "sacuvano"
  *
  *
- * @version 1.1
+ * @version 1.2
  */	
     
-    public function ocenjivanje() {
+     public function ocenjivanje() {
        if(isset($_SESSION['id']))  {
        $receptModel=new ReceptiModel();
        $ocenjenoModel=new KorisnikOcenaModel();
@@ -434,16 +451,40 @@ class Korisnik extends BaseController {
             }
         }
         
+       if($i==0){ 
+        $recepti=$receptModel->findAll();
+        $rec=$receptModel->find($id);
+        
+        $sum=0;
+        $cnt=0;
+                       
+        
         $object=$receptModel->find($id);       
         $br=$object->brocena+1;
         $oc=$object->ocena+$o;
         
-       if($i==0){
-           
-       $data=['ocena'=>$oc,'brocena'=>$br];
-       $receptModel->update($id, $data);
+        
+        $data=['ocena'=>$oc,'brocena'=>$br];
+        $receptModel->update($id, $data);
     
-       $ocenjenoModel->insert($sacuvano);
+        $ocenjenoModel->insert($sacuvano);
+       
+       
+        foreach ($recepti as $recept){
+            if($recept->autor==$rec->autor)
+            {
+                if($recept->brocena>0)
+                $sum=$sum+($recept->ocena/$recept->brocena); 
+                $cnt++;
+            }
+        }
+
+        
+        $korisnikModel=new KorisnikModelOperacije();
+
+       $ocena=['ocena'=>$sum/$cnt];
+       $korisnikModel->update($rec->autor,$ocena);
+       
         }else echo "<script>alert('recept je vec ocenjen');</script>";
                 
         $this->prikaz_stranice();
@@ -453,7 +494,6 @@ class Korisnik extends BaseController {
           else
           $this->index_stranica ();
     }
-    
     
     
     //--------------------------------------------------------------------
