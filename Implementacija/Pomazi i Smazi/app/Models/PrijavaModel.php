@@ -11,25 +11,14 @@ use CodeIgniter\Model;
 /**
  * Klasa koja predstavlja konekciju sa bazom, konkretno, tabelom prijava, takođe, sadrži funkcije za rad sa tabelom
  *
- * @version 1.0
+ * @version 1.1
  */
 
 class PrijavaModel extends Model
 {
-        protected $table      = 'users';
-        protected $primaryKey = 'id';
+        protected $table      = 'prijava';
+       // protected $primaryKey = 'id';
 
-        protected $returnType = 'array';
-        protected $useSoftDeletes = true;
-
-        protected $allowedFields = ['name', 'email'];
-
-        protected $useTimestamps = false;
-        protected $createdField  = 'created_at';
-        protected $updatedField  = 'updated_at';
-        protected $deletedField  = 'deleted_at';
-
-        protected $validationRules    = [];
-        protected $validationMessages = [];
-        protected $skipValidation     = false;
+        protected $returnType = 'object';
+        protected $allowedFields = ['idR', 'idK'];
 }

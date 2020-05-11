@@ -15,120 +15,40 @@ use App\Models\PrijavaModel;
  * Korisnik - klasa zadužena za prikaz odgovarajuće početne stranice privilegovanpg korisnika i obrade objave novog recepta, 
  * čuvanja recepata, uklanjanja recepata iz sačuvanih, prijave nepoželjnog sadržaja i ocenjivanja recepata
  *
- * @version 1.2
+ * @version 1.4
  */
 
 class Korisnik extends BaseController {
 
-    /**
-	 * Funkcija zadužena za proveru unetih kredencijala prilikom logovanja 
-	 * U slučaju uspeha preusmerava korisnika na odgovarajuću početnu stranu, a u slučaju neuspeha ispisuje odgovarajuću poruku
-	 *
-	 * @return RedirectResponse|void
-	 *
-	 * @version 1.1
-	 *
-	 */
-    public function login_provera() {
-        
-        if(!$this->validate(['username'=>'required', 'password'=>'required'])) {
-            $GLOBALS['error']=$this->validator->getErrors();
-            return $this->index_stranica();
-        }
-        
-        $korisnikModel=new KorisnikModel();
-        $korisnik=$korisnikModel->pretragaUsername($this->request->getVar('username'));
-        
-        if(empty($korisnik)) {
-            $GLOBALS['error']['user']="Korisnik ne postoji.";
-            return $this->index_stranica();
-        }
-        
-        if($korisnik[0]['sifra']!=hash('sha512',$this->request->getVar('password'))) {
-            $GLOBALS['error']['pass']="Pogresna lozinka.";
-            return $this->index_stranica();
-        }
-        
-        $this->session->set('korisnik', $korisnik[0]); 
-        if($korisnik[0]['admin']==0){
-            
-        $this->id=$korisnik[0]['id'];    
-        
-
-        $_SESSION['id']=$korisnik[0]['id'];
-        
-        $_GET['meni']='meni_pocetna';
-        $_GET['body']='body';
-        $_GET['izbor']='main';
-
-            return $this->prikaz_stranice();
-        } else {
-            header("Location: ".site_url("Admin/prikaz_stranice"));
-            exit;
-        }
-    }
-    
-	
-	/**
-	 * Funkcija koja dodaje novog korisnika u bazu na osnovu unetih podataka
-	 *
-	 * @return void
-	 *
-	 * version 1.0
-	 *
-	 */
-	
-    public function pravljenje_naloga() {
-        if(!$this->validate(['username'=>'required', 'password'=>'required', 'ime'=>'required', 'prezime'=>'required'])) {
-            $GLOBALS['error']=$this->validator->getErrors();
-            return $this->napravi_nalog();
-        }
-        
-        $korisnikModel=new KorisnikModel();
-        $korisnik=$korisnikModel->pretragaUsername($this->request->getVar('username'));
-        
-        if(!empty($korisnik)) {
-            $GLOBALS['error']['user']="Korisnik vec postoji.";
-            return $this->napravi_nalog();
-        }
-        
-        $korisnikModel->save([
-            'ime'=>$this->request->getVar('ime'),
-            'prezime'=>$this->request->getVar('prezime'),
-            'username'=>$this->request->getVar('username'),
-            'sifra'=>hash('sha512',$this->request->getVar('password')),
-            'admin'=>0
-        ]);
-        
-        $this->index_stranica();
-        
-    }
     
 /**
  * Funkcija koja na osnovu izbora kategorije filtriranja prikuplja podatke i otvara odgovaarajucu stranicu
  *
  * varijanta ULOGOVANI KORISNIK
  *
- * @version 1.1
+ * @version 1.2
  */	
     
-    public function prikaz_stranice(){
+     public function prikaz_stranice(){
         
        // $image = \Config\Services::image() ->withFile('/image/patka.jpg');
-     if(isset($_SESSION['id']))  {
         if(isset($_GET['izbor'])){
-        $izbor=$_GET['izbor'];
-        $_SESSION['izbor']=$izbor;
+            $izbor=$_GET['izbor'];
         }
-        else
-       $izbor=$_SESSION['izbor'];
+        else if(isset($_SESSION['izbor']))
+            $izbor=$_SESSION['izbor'];
+        else 
+            $izbor='svi_recepti';
+        $_SESSION['izbor']=$izbor;
         
         if(isset($_GET['meni'])){
-        $meni=$_GET['meni'];
-        $_SESSION['meni']=$meni;
+            $meni=$_GET['meni'];
         }
-        else
+        else if(isset($_SESSION['meni']))
             $meni=$_SESSION['meni'];
+        else
+            $meni='meni_pocetna';
+        $_SESSION['meni']=$meni;
         
         $recepti=array();
         
@@ -175,37 +95,81 @@ class Korisnik extends BaseController {
             
             case 'izvrsni_kuvar':
                 $i=0;
-            foreach($svi_recepti as $recept)
+                
+            $korisnikModel=new KorisnikModelOperacije();                       
+            $kuvar= $korisnikModel->findAll();
+
+            foreach($kuvar as $k)
             {
-                if($recept->ocena/$recept->brocena>4){
-                $recepti[$i]=$recept;
-                $i++;
+                
+                if($k->ocena>4){
+                   
+                    $uslov=['autor'=>$k->id];
+                    $recept=$receptiModel->getWhere($uslov);
+                    $recept = $recept->getResultObject();  
+                    
+                  foreach ($recept as $r){
+                       
+                    $recepti[$i]=$r;
+                    $i++;
+                    }
                 }
             }
+            
              $body='body';
             break;    
 
+            
             case 'odlicni_kuvar':
-                $i=0;
-            foreach($svi_recepti as $recept)
+               $i=0;
+                
+            $korisnikModel=new KorisnikModelOperacije();                       
+            $kuvar= $korisnikModel->findAll();
+
+            foreach($kuvar as $k)
             {
-                if($recept->ocena/$recept->brocena>2 && $recept->ocena/$recept->brocena<=4 ){
-                $recepti[$i]=$recept;
-                $i++;
+                
+                if($k->ocena>2.1 && $k->ocena<=4){
+                 
+                    $uslov=['autor'=>$k->id];
+                    $recept=$receptiModel->getWhere($uslov);
+                    $recept = $recept->getResultObject();  
+                    
+                  foreach ($recept as $r){
+                      
+                    $recepti[$i]=$r;
+                    $i++;
+                    }
                 }
             }
-             $body='body';
+            
+                        
+            $body='body';
             break;  
             
             case 'solidni_kuvar':
-                $i=0;
-            foreach($svi_recepti as $recept)
+               $i=0;
+                
+            $korisnikModel=new KorisnikModelOperacije();                       
+            $kuvar= $korisnikModel->findAll();
+
+            foreach($kuvar as $k)
             {
-                if($recept->ocena/$recept->brocena<=2 ){
-                $recepti[$i]=$recept;
-                $i++;
+                
+                if($k->ocena<=2 ){
+                 
+                    $uslov=['autor'=>$k->id];
+                    $recept=$receptiModel->getWhere($uslov);
+                    $recept = $recept->getResultObject();  
+                    
+                  foreach ($recept as $r){
+                      
+                    $recepti[$i]=$r;
+                    $i++;
+                    }
                 }
             }
+            
              $body='body';
             break;  
             
@@ -284,8 +248,7 @@ class Korisnik extends BaseController {
         echo view("stranice/meni_stranice/".$meni);
         echo view("stranice/body/".$body,$data);       //nisam sigurna kako ovo da napravim.
         
-     }else
-         $this->index_stranica ();
+     
     }
     
     
@@ -323,18 +286,6 @@ class Korisnik extends BaseController {
         session_destroy();
     }
     
-/**
- * Funkcija koja pamti prijavu recepta od strane korisnika u bazi
- * Funkcija se poziva sa bilo koje stranice gde korisnik ima opciju "prijavi"
- * Na Administratorskoj stranici se prijavljeni recepti prikazuju
- *
- * @version 1.0
- */	
-	
-    public function prijava(){
-       echo view("forme/logovanje");
-       
-    }
 
 /**
  * Funkcija koja pamti u bazi koji korisnik je sacuvao koji recept. 
@@ -563,6 +514,50 @@ class Korisnik extends BaseController {
 
         $this->prikaz_stranice();
         
+    }
+	
+	/**
+	 * Kada korisnki pritisne dugme 'prijavi', poziva se funkcija koja proverava 
+	 * da li je isti recept vec prijavljen od strane istog korisnika i ako nije, ubacuje novu prijavu u bazu
+	 *
+	 * @return void
+	 *
+	 * @version 1.0
+	 */
+	public function prijavi()
+    {
+          
+        $prijavaModel=new PrijavaModel();  
+        $idk=$_SESSION['id'];
+        $id=$_GET['id'];
+        
+        $receptiModel = new ReceptiModel();
+        $recept = $receptiModel->find($id);
+        
+        if($recept->autor!=$idk) {
+        
+       $prijava = ['idK' => $idk, 'idR' => $id];
+
+         $provera = $prijavaModel->getWhere($prijava);
+         $provera = $provera->getResultObject();
+
+            $i = 0;
+
+         foreach ($provera as $p) {
+               if ($p->idK == $idk && $p->idR) {
+                   $i++;
+               }
+            }
+            
+         if($i==0){
+           
+           $prijavaModel->insert($prijava);
+         }   
+          else echo "<script>alert('recept je vec prijavljen');</script>";
+
+        }
+        else echo "<script>alert('ne mozete prijaviti svoj recept');</script>";
+        $this->prikaz_stranice();    
     }
     
     
