@@ -494,6 +494,76 @@ class Korisnik extends BaseController {
           else
           $this->index_stranica ();
     }
+	
+	/**
+	 * Funkcija zadužena za dodavanje novog recepta u bazu, na osnovu podataka unetih preko odgovarajue forme
+	 *
+	 * @return void
+	 *
+	 * @version 1.0
+	 */
+	 public function pravljenje_recepta() {
+        if(!isset($_POST['odustani'])) {
+   
+            if(!$this->validate([
+                'naziv'=>'required',
+                'sastojci'=>'required|max_length[1000]',
+                'priprema'=>'required|max_length[2000]',
+                'slika'=>'uploaded[slika]'
+                ])){
+                    $GLOBALS['error']=$this->validator->getErrors();
+            } else 
+            if(!$this->validate([
+                'slika'=>'mime_in[slika,image/jpg,image/jpeg,image/gif,image/png]'
+            ])) {
+                $GLOBALS['error']['sl']="Izabrali ste neadekvatan format slike!";
+            }
+            if($this->request->getVar('kategorija1')==null&&$this->request->getVar('kategorija2')==null&&$this->request->getVar('kategorija3')==null) {
+                $GLOBALS['error']['kategorija']="Niste odabrali ni jednu od kategorija!";
+            }
+            if($this->request->getVar('kategorija1')!=null&&$this->request->getVar('kategorija2')!=null&&$this->request->getVar('kategorija3')!=null) {
+                $GLOBALS['error']['kategorija']="Odabrali ste previse kategorija!";
+            }
+            if(!empty($GLOBALS['error']))
+                return $this->novi_recept();
+
+            $k1=0;
+            $k2=0;
+            $k3=0;
+
+            if($this->request->getVar('kategorija1')!=null) $k1=1;
+            if($this->request->getVar('kategorija2')!=null) $k2=1;
+            if($this->request->getVar('kategorija3')!=null) $k3=1;
+
+            $korisnik=$this->session->get('korisnik');
+
+            $slika=$this->request->getFile('slika');
+            $slika->move(WRITEPATH . '../uploads');
+
+
+            $receptiModel=new ReceptiModel();
+            $receptiModel->save([
+                'slika'=>"uploads/".$slika->getClientName(),
+                'sastojci'=>$this->request->getVar('sastojci'), 
+                'priprema'=>$this->request->getVar('priprema'),
+                'k1'=>$k1,
+                'k2'=>$k2,
+                'k3'=>$k3,
+                'autor'=>$korisnik['id'],
+                'ime'=>$this->request->getVar('naziv'),
+                'ocena'=>0,
+                'brocena'=>0
+                ]);
+            
+        }    
+    
+        $_GET['meni']='moj_nalog';
+        $_GET['body']='body_B';
+        $_GET['izbor']='moj_nalog';
+
+        $this->prikaz_stranice();
+        
+    }
     
     
     //--------------------------------------------------------------------
