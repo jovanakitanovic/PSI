@@ -31,7 +31,7 @@ class Korisnik extends BaseController {
     
      public function prikaz_stranice(){
         
-       // $image = \Config\Services::image() ->withFile('/image/patka.jpg');
+         // $image = \Config\Services::image() ->withFile('/image/patka.jpg');
         if(isset($_GET['izbor'])){
             $izbor=$_GET['izbor'];
         }
@@ -248,7 +248,6 @@ class Korisnik extends BaseController {
         echo view("stranice/meni_stranice/".$meni);
         echo view("stranice/body/".$body,$data);       //nisam sigurna kako ovo da napravim.
         
-     
     }
     
     
@@ -293,13 +292,12 @@ class Korisnik extends BaseController {
  * Upamceni recepti ce biti prikazani na stranici "sacuvano"
  *
  *
- * @version 1.2
+ * @version 1.3
  */	
     
     public function sacuvaj()
     {
-      if(isset($_SESSION['id']))  {
-          
+		$res="";
         $sacuvanoModel=new SacuvanoModel();  
         $idk=$_SESSION['id'];
         $id=$_GET['id'];
@@ -322,26 +320,29 @@ class Korisnik extends BaseController {
            
            $sacuvanoModel->insert($sacuvano);
          }   
-          else echo "<script>alert('recept je vec sacuvan');</script>";
-
-        $this->prikaz_stranice();          
-            
-        } else
-            $this->index_stranica();
+          else {
+            $response_array='recept je već sačuvan';
+            echo json_encode($response_array);
+            $res="ok"; 
+          }
+          
+          if($res==""){
+            $response_array='recept je sačuvan';
+            echo json_encode($response_array);
+          }
+         
 
     }
    
 /**
  * Funkcija zaduzena za izbacivanje recepta iz tabele sacuvanih recepata
  *
- * @version 1.1
+ * @version 1.2
  * 
  */
     
      public function izbaci(){
-        if(isset($_SESSION['id']))  {
-            
-            $sacuvanoModel=new SacuvanoModel();
+               $sacuvanoModel=new SacuvanoModel();
             
             $idk=$_SESSION['id'];
             $idr=$_GET['id'];
@@ -357,11 +358,9 @@ class Korisnik extends BaseController {
            $sacuvanoModel->where('idR', $idr); 
            $sacuvanoModel->delete();
             
-            $this->prikaz_stranice();
-            
-        }
-          else
-          $this->index_stranica ();
+          //  $this->prikaz_stranice();
+            $response_array='recept je izbacen';
+            echo json_encode($response_array);
     }
 
 /**
@@ -374,10 +373,9 @@ class Korisnik extends BaseController {
  */	
     
      public function ocenjivanje() {
-       if(isset($_SESSION['id']))  {
        $receptModel=new ReceptiModel();
        $ocenjenoModel=new KorisnikOcenaModel();
-        
+        $res="";
      
         $idk=$_SESSION['id'];
         $id=$_GET['id'];
@@ -386,8 +384,11 @@ class Korisnik extends BaseController {
         $recept=$receptModel->find($id);
         
        if($recept->autor==$idk){
-           echo "<script>alert('ne možete oceniti vaš recept');</script>";
-            $this->prikaz_stranice();
+          // echo "<script>alert('ne možete oceniti vaš recept');</script>";
+            $response_array='ne možete oceniti vaš recept';
+            echo json_encode($response_array);
+            $res="ok";
+            //$this->prikaz_stranice();
        }else{
         
         $provera=$ocenjenoModel->getWhere($sacuvano);
@@ -436,14 +437,17 @@ class Korisnik extends BaseController {
        $ocena=['ocena'=>$sum/$cnt];
        $korisnikModel->update($rec->autor,$ocena);
        
-        }else echo "<script>alert('recept je vec ocenjen');</script>";
-                
-        $this->prikaz_stranice();
+        }else{ 
+            $response_array = 'recept je već ocenjen';
+              echo json_encode($response_array);
+              $res="ok";
         }
-         
-       }
-          else
-          $this->index_stranica ();
+        if($res==""){
+             $response_array = 'uspesno ste ocenili recept';
+              echo json_encode($response_array);    
+              }
+       // $this->prikaz_stranice();
+        }
     }
 	
 	/**

@@ -31,7 +31,7 @@
 
             <table class="table table-borderless table-dark" align="center" >
 
-                <form action="<?= site_url("Korisnik/pravljenje_naloga") ?>" method="post">
+                <form action="<?= site_url("Gost/pravljenje_naloga") ?>" method="post">
                 
                 <tr >
                     <td align="right" width="50%">
@@ -119,7 +119,7 @@
                         </form>
                     </td>
                     <td align="left">
-                        <form action="<?= site_url("Korisnik/index_stranica") ?>" method="post">
+                        <form action="<?= site_url("Gost/index_stranica") ?>" method="post">
                         <input type="submit" class="btn btn-danger" value="odustani">
                         </form>
                     </td>

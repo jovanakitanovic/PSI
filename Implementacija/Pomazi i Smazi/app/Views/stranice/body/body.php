@@ -3,6 +3,8 @@
     <form method="post" >
      
            <?php  
+           
+         
                       
            if($_SESSION['izbor']=='izvrsni_kuvar'){
             echo "<h5>recepti sa ocenom vecom od 4 </h5>";
@@ -45,31 +47,33 @@
 
            echo "{$recept->priprema}  <hr/>";
            
-           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=1", "<input type='button' class='btn btn-light'  value='1' />");
+           //
+           //echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=1", "<input type='button' class='btn btn-light'  value='1' />");
+           echo "<input type='button' onclick='oceni("."$recept->id,1".")' class='btn btn-light' value='1'>";
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='1' />&nbsp	";    
         
-           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=2", "<input type='button' class='btn btn-light'  value='2' />");
+           echo "<input type='button' onclick='oceni("."$recept->id,2".")' class='btn btn-light' value='2'>";
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='2' /> &nbsp	";
        
-           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=3", "<input type='button' class='btn btn-light'  value='3' />");
+           echo "<input type='button' onclick='oceni("."$recept->id,3".")' class='btn btn-light' value='3'>";
            echo "&nbsp";
           // echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='3' /> &nbsp	";
         
-           echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=4", "<input type='button' class='btn btn-light'  value='4' />");
+           echo "<input type='button' onclick='oceni("."$recept->id,4".")' class='btn btn-light' value='4'>";
            echo "&nbsp";
          //  echo "<input type='submit' class='btn btn-light' name="."o$recept->id"."  value='4' /> &nbsp";
          
-         echo anchor("Korisnik/ocenjivanje?id=$recept->id&o=5", "<input type='button' class='btn btn-light'  value='5' />");
-         echo "&nbsp &nbsp ";
+           echo "<input type='button' onclick='oceni("."$recept->id,5".")' class='btn btn-light' value='5'>";
+           echo "&nbsp &nbsp ";
            //echo "<input type='submit' class='btn btn-light' name="."o$recept->id"." value='5' /> &nbsp &nbsp ";
          
-           echo anchor("Korisnik/sacuvaj?id=$recept->id", "<input type='button' class='btn btn-primary'  value='sačuvaj' />");
+           echo "<input type='button' onclick='sacuvaj("."$recept->id".")' class='btn btn-primary' value='sacuvaj'>";
            echo "&nbsp &nbsp ";
            //echo "<input type='submit' name="."sacuvaj$recept->id"."  class='btn btn-primary' value='sačuvaj'> &nbsp &nbsp";   
            
-           echo anchor("Korisnik/prijavi?id={$recept->id}", "<input type='button' class='btn btn-danger'  value='prijavi' />");
+           echo "<input type='button' onclick='prijavi("."$recept->id".")' class='btn btn-danger' value='prijavi'>";
            echo "&nbsp &nbsp <br><br><hr/><br>";   
            //echo "<input type='submit' name="."prijavi$recept->id"."  class='btn btn-danger' value='prijavi'><hr/><hr/><br>";
          
@@ -85,7 +89,7 @@
             }
          }
          
-         foreach ($recepti as $recept){
+    /*     foreach ($recepti as $recept){
              
              if(isset($_POST["sacuvaj$recept->id"])){
                  echo "$recept->id";
@@ -104,13 +108,76 @@
              }
              
          }
-         
-         
+         */
+        
          
             ?>
    
     </form>
-</table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type='text/javascript'>
+  
+
+    function oceni(id,o)
+    {
+    
+        $.ajax({
+             url:"http://localhost:8080/index.php/Korisnik/ocenjivanje",
+             method: 'GET',
+             data: {id:id,o:o},
+             dataType: 'json',
+             timeout: 3000,
+          success: function(status){
+          if(status!="uspesno ste ocenili recept")
+             alert (status);
+          },error:function(error){
+              console.log(error);
+        }
+        });
+  
+     }
+     
+    function sacuvaj(id)
+    {
+    
+       $.ajax({
+             url:"http://localhost:8080/index.php/Korisnik/sacuvaj",
+             method: 'GET',
+             data: {id:id},
+             dataType: 'json',
+             timeout: 3000,
+         success: function(status){
+         if(status!="recept je sačuvan")
+             alert (status);
+         },error:function(error){
+             console.log(error);
+        }
+        });
+  
+     }
+     
+    function prijavi(id)
+    {
+    
+        $.ajax({
+                url:"http://localhost:8080/index.php/Korisnik/prijavi",
+                method: 'GET',
+                data: {id:id},
+                dataType: 'json',
+                timeout: 3000,
+            success: function(status){
+            if(status!="recept je prijavljen")
+                alert (status);
+             },error:function(error){
+                console.log(error);
+            }
+        });
+  
+     }
+ 
+    </script>
+    
+ </table>
 </td>
 </tr>
 </div>

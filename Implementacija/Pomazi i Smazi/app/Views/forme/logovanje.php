@@ -36,7 +36,7 @@
         <div class="container-fluid">
             <table class="table table-borderless table-dark" align="center" >
             
-            <form action="<?= site_url("Korisnik/login_provera") ?>" method="post">
+            <form action="<?= site_url("Gost/login_provera") ?>" method="post">
 
                 <tr >
                     <td align="right" width="50%">
@@ -90,7 +90,7 @@
             </form>
                     </td>
                     <td align="left">
-                         <form action="<?= site_url("Korisnik/napravi_nalog") ?>" method="post">
+                         <form action="<?= site_url("Gost/napravi_nalog") ?>" method="post">
                           <input type="submit" class="btn btn-info" name="napravi_nalog" value="napravi nalog">
                          </form>
                     </td>

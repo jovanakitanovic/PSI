@@ -2,7 +2,7 @@
 <table>
     <form method="post" >
      
-           <?php  
+           <?php   
            
            if($_SESSION['izbor']=='izvrsni_kuvar'){
             echo "<h5>recepti sa ocenom vecom od 4 </h5>";
@@ -29,30 +29,30 @@
              ];
           
              echo "<tr>";
-             echo "<td width='40%' align='center'>";
+            echo "<td width='40%' align='center'>";
            // echo img("http://localhost/ps/$recept->slika");
-             echo img($imageProperties);
-             echo "</td>";
+            echo img($imageProperties);
+            echo "</td>";
             
-             echo "<td width='60%'>";
-             echo "<table style=>";
-             echo "<tr>";
-             echo "<td><br/>";
-             echo "<h5> {$recept->ime} </h5> <hr/>";
+            echo "<td width='60%'>";
+            echo "<table style=>";
+            echo "<tr>";
+            echo "<td><br/>";
+           echo "<h5> {$recept->ime} </h5> <hr/>";
 
-             echo "{$recept->sastojci}  <hr/>";
-           
-             echo "{$recept->priprema}  <hr/>";
-             echo anchor("Korisnik/izbaci?id=$recept->id", "<input type='button' class='btn btn-danger'  value='izbaci' />");
-             echo "&nbsp &nbsp ";
-             echo " <br/><hr/><br/><br/>";
+           echo "{$recept->sastojci}  <hr/>";
 
-             echo "</td>";
-             echo "</tr>";
-             echo "</table>";
+           echo "{$recept->priprema}  <hr/>";
+           echo anchor("Korisnik/izbaci?id=$recept->id", "<input type='button' class='btn btn-danger'  value='izbaci' />");
+           echo "&nbsp &nbsp ";
+           echo " <br/><hr/><br/><br/>";
+
+            echo "</td>";
+            echo "</tr>";
+            echo "</table>";
              echo '<hr style="border: 1px solid gray;">';
-             echo "</td>";
-             echo "</tr>";
+            echo "</td>";
+            echo "</tr>";
             
             }
          }

@@ -80,7 +80,7 @@
                         sastojci
                     </td>
                     <td align="left">
-                        <textarea id="w3mission" rows="4" cols="50" name="sastojci" value="<?= set_value('sastojci') ?>"></textarea>		
+                        <textarea id="w3mission" rows="4" cols="50" name="sastojci"><?= set_value('sastojci') ?></textarea>		
                     </td>
                     <td align='left'><font color='red'>
                     <?php 
@@ -103,7 +103,7 @@
                         način pripreme
                     </td>
                     <td align="left">
-                        <textarea id="w3mission" rows="8" cols="50" name="priprema" value="<?= set_value('priprema') ?>"></textarea>	
+                        <textarea id="w3mission" rows="8" cols="50" name="priprema"><?= set_value('priprema') ?></textarea>	
                     </td>
                     <td align='left'><font color='red'>
                     <?php 

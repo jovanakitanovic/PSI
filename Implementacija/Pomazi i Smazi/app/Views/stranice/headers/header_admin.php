@@ -15,7 +15,7 @@
                     </td>
 
                     <td align="right">
-                        <form action="<?= site_url("Korisnik/logout") ?>" method="post">
+                        <form action="<?= site_url("Admin/logout") ?>" method="post">
                           <input type="submit" class="btn btn-warning" name="izloguj se" value="izloguj se">
                         </form>
                         </td>
