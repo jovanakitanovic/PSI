@@ -22,6 +22,7 @@ class SacuvanoModel extends Model
         protected $returnType = 'object';
         protected $allowedFields = ['idR', 'idK'];
 
+<<<<<<< Updated upstream
 
 /**
 *	funkcija koja dihvata sve redove tabele sacuvano
@@ -44,11 +45,29 @@ class SacuvanoModel extends Model
       
 
   
+=======
+}
+
+class SacuvanoModel extends Model                       
+{
+        protected $table      = 'sacuvano';
+        protected $primaryKey = 'idR';
+
+        protected $returnType = 'object';
+        protected $allowedFields = ['idR', 'idK'];
+
+        
+        public function dohvati_sve_sacuvano(){
+            return $this->findAll();
+        }
+        
+>>>>>>> Stashed changes
         public function dohvati_sacuvano_po_id_recepta($id) {
             $this->where('idR',$id);
             return $this->findAll();
         }
         
+<<<<<<< Updated upstream
 /**
 *	funkcija koja dihvata sve sacuvane recepte po id-ju korisnika
 *
@@ -58,10 +77,13 @@ class SacuvanoModel extends Model
 */			
     		
 		
+=======
+>>>>>>> Stashed changes
         public function dohvati_sacuvano_po_id_korisnika($id){
             $this->where('idK',$id);
             return $this->findAll();
         }
+<<<<<<< Updated upstream
 		
 /**
 *	funkcija koja dihvata sve sacuvane recepte po id-ju recepta i
@@ -73,6 +95,8 @@ class SacuvanoModel extends Model
 *	@version 1.0
 */			
     		
+=======
+>>>>>>> Stashed changes
         
         public function provera_sacuvano($idr,$idk){
             $this->where('idR',$idr);
@@ -80,6 +104,7 @@ class SacuvanoModel extends Model
             return $this->findAll();
         }
         
+<<<<<<< Updated upstream
 /**
 *	funkcija koja uklanja recept koji je sacuvao dati korisnik
 *
@@ -88,9 +113,15 @@ class SacuvanoModel extends Model
 *	@version 1.0
 */			
     		
+=======
+>>>>>>> Stashed changes
         public function obrisi_sacuvano($idk,$idr){
            $this->where('idK', $idk); 
            $this->where('idR', $idr); 
            $this->delete();
         }
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
 }

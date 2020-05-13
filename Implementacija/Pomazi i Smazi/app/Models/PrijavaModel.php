@@ -3,7 +3,7 @@
 /**
  * Autor: Jovana Kitanovic 0603/17
  *
- * @version 1.0
+ * @version 1.2
  */
 
 use CodeIgniter\Model;
@@ -11,7 +11,7 @@ use CodeIgniter\Model;
 /**
  * Klasa koja predstavlja konekciju sa bazom, konkretno, tabelom prijava, takođe, sadrži funkcije za rad sa tabelom
  *
- * @version 1.1
+ * @version 1.2
  */
 
 class PrijavaModel extends Model
@@ -21,6 +21,7 @@ class PrijavaModel extends Model
 
         protected $returnType = 'object';
         protected $allowedFields = ['idR', 'idK'];
+<<<<<<< Updated upstream
 
 /**
 *	funkcija koja dihvata sve redove tabele prijava
@@ -29,10 +30,14 @@ class PrijavaModel extends Model
 *	@version 1.0
 */		
 		        
+=======
+        
+>>>>>>> Stashed changes
         public function dohvati_sve_prijave(){
             return $this->findAll();
         }
         
+<<<<<<< Updated upstream
 /**
 *	funkcija koja dihvata sve redove tabele gde je idR i idK jedako 
 * 	prosleđenim vrednostima
@@ -42,11 +47,14 @@ class PrijavaModel extends Model
 *	@version 1.0
 */	
 		
+=======
+>>>>>>> Stashed changes
         public function provera_prijavljeno($idr,$idk) {
             $this->where('idK',$idk);
             $this->where('idR',$idr);
             return $this->findAll();
         }
+<<<<<<< Updated upstream
 		
 /**
 *	funkcija koja dihvata sve redove tabele gde je idK jedako 
@@ -58,12 +66,15 @@ class PrijavaModel extends Model
 */	
 			
 		
+=======
+>>>>>>> Stashed changes
         
         public function dohvati_po_id_korisnika($idK)
         {
             $this->where('idK',$idk);
             return $this->findAll();
         }
+<<<<<<< Updated upstream
 		
 /**
 *	funkcija koja dihvata sve redove tabele gde je idR jedako 
@@ -74,10 +85,16 @@ class PrijavaModel extends Model
 *	@version 1.0
 */			
 		
+=======
+>>>>>>> Stashed changes
         
         public function dohvati_po_id_recepta($idR)
         {
             $this->where('idR',$idR);
             return $this->findAll();        
         }
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
 }

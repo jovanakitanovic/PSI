@@ -15,7 +15,7 @@ use App\Models\PrijavaModel;
  * Korisnik - klasa zadužena za prikaz odgovarajuće početne stranice privilegovanpg korisnika i obrade objave novog recepta, 
  * čuvanja recepata, uklanjanja recepata iz sačuvanih, prijave nepoželjnog sadržaja i ocenjivanja recepata
  *
- * @version 1.4
+ * @version 1.5
  */
 
 class Korisnik extends BaseController {
@@ -297,7 +297,11 @@ class Korisnik extends BaseController {
     
     public function sacuvaj()
     {
+<<<<<<< Updated upstream
 		$res="";
+=======
+        $res="";
+>>>>>>> Stashed changes
         $sacuvanoModel=new SacuvanoModel();  
         $idk=$_SESSION['id'];
         $id=$_GET['id'];
@@ -331,6 +335,12 @@ class Korisnik extends BaseController {
             echo json_encode($response_array);
           }
          
+<<<<<<< Updated upstream
+=======
+
+        //$this->prikaz_stranice();          
+            
+>>>>>>> Stashed changes
 
     }
    
@@ -342,7 +352,12 @@ class Korisnik extends BaseController {
  */
     
      public function izbaci(){
+<<<<<<< Updated upstream
                $sacuvanoModel=new SacuvanoModel();
+=======
+            
+            $sacuvanoModel=new SacuvanoModel();
+>>>>>>> Stashed changes
             
             $idk=$_SESSION['id'];
             $idr=$_GET['id'];
@@ -361,6 +376,10 @@ class Korisnik extends BaseController {
           //  $this->prikaz_stranice();
             $response_array='recept je izbacen';
             echo json_encode($response_array);
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
     }
 
 /**
@@ -441,6 +460,7 @@ class Korisnik extends BaseController {
             $response_array = 'recept je već ocenjen';
               echo json_encode($response_array);
               $res="ok";
+<<<<<<< Updated upstream
         }
         if($res==""){
              $response_array = 'uspesno ste ocenili recept';
@@ -448,6 +468,17 @@ class Korisnik extends BaseController {
               }
        // $this->prikaz_stranice();
         }
+=======
+        }
+        if($res==""){
+             $response_array = 'uspesno ste ocenili recept';
+              echo json_encode($response_array);    
+              }
+       // $this->prikaz_stranice();
+        }
+
+       
+>>>>>>> Stashed changes
     }
 	
 	/**
@@ -526,11 +557,11 @@ class Korisnik extends BaseController {
 	 *
 	 * @return void
 	 *
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	public function prijavi()
     {
-          
+        $res="";
         $prijavaModel=new PrijavaModel();  
         $idk=$_SESSION['id'];
         $id=$_GET['id'];
@@ -557,11 +588,25 @@ class Korisnik extends BaseController {
            
            $prijavaModel->insert($prijava);
          }   
-          else echo "<script>alert('recept je vec prijavljen');</script>";
-
+          else{ 
+            $response_array='recept je vec prijavljen';
+            echo json_encode($response_array);
+            $res="ok"; 
+          }
         }
-        else echo "<script>alert('ne mozete prijaviti svoj recept');</script>";
-        $this->prikaz_stranice();    
+        else {
+            $response_array='ne mozete prijaviti svoj recept';
+            echo json_encode($response_array);
+            $res="ok"; 
+        }
+         
+        
+        if($res==""){
+            $response_array='recept je prijavljen';
+            echo json_encode($response_array);
+          }
+        
+       // $this->prikaz_stranice();    
     }
     
     

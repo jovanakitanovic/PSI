@@ -21,6 +21,7 @@ class ReceptiModel extends Model
         protected $returnType = 'object';
         protected $allowedFields = ['slika', 'sastojci', 'priprema','k1','k2','k3','autor','ime','ocena','brocena'];
 
+<<<<<<< Updated upstream
 /**
 *	funkcija koja dihvata sve redove tabele recepti
 *
@@ -39,11 +40,18 @@ class ReceptiModel extends Model
 *	@return stdObject[]
 *	@version 1.0
 */			
+=======
+        
+        public function dohvati_sve_recepte(){
+            return $this->findAll();
+        }
+>>>>>>> Stashed changes
         
         public function dohvati_po_id_autora($id){
             $this->where('autor',$id);
             return $this->findAll();
         }
+<<<<<<< Updated upstream
    
 /**
 *	funkcija koja dihvata recept po odgovarajucem id-ju
@@ -53,11 +61,15 @@ class ReceptiModel extends Model
 *	@version 1.0
 */	
    
+=======
+        
+>>>>>>> Stashed changes
         public function dohvati_recept_po_id_recepta($id){
             $this->where('id',$id);
             $recept=$this->find();
             return $recept[0];
         }
+<<<<<<< Updated upstream
 
 /**
 *	funkcija koja dihvata sve recepte kategorije "slatko ćoše"
@@ -66,12 +78,15 @@ class ReceptiModel extends Model
 *	@return stdObject[]
 *	@version 1.0
 */			
+=======
+>>>>>>> Stashed changes
         
          public function dohvati_recepte_slatko(){
             $this->where('k2',1);
            return $this->findAll();
             
         }
+<<<<<<< Updated upstream
  /**
 *	funkcija koja dihvata sve recepte kategorije "za mesojede"
 *
@@ -80,12 +95,16 @@ class ReceptiModel extends Model
 *	@version 1.0
 */	       
 		
+=======
+        
+>>>>>>> Stashed changes
         public function dohvati_recepte_meso(){
             $this->where('k1',1);
            return $this->findAll();
             
         }
         
+<<<<<<< Updated upstream
 /**
 *	funkcija koja dihvata sve recepte kategorije "svakojaka testa"
 *
@@ -94,6 +113,8 @@ class ReceptiModel extends Model
 *	@version 1.0
 */			
 		
+=======
+>>>>>>> Stashed changes
         public function dohvati_recepte_testo(){
             $this->where('k3',1);
            return $this->findAll();

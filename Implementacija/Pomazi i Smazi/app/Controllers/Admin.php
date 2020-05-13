@@ -3,7 +3,7 @@
 /**
  * Autor: Maja Licina 0506/17
  *
- * @version 1.1
+ * @version 1.2
  */
 
 use App\Models\ReceptiModel;
@@ -16,7 +16,7 @@ use App\Models\PrijavaModel;
 /**
  * Admin - klasa zadužena za obradu funkcionalnosti vezanih za ulogu administratora, kao i za prikaz odgovarajuće početne stranice
  *
- * @version 1.1
+ * @version 1.2
  */
 
 class Admin extends BaseController {
@@ -73,7 +73,7 @@ class Admin extends BaseController {
 	 *
 	 * @return void
 	 *
-	 * @version 1.0
+	 * @version 1.1
 	 */
     public function ostavi()
     {
@@ -83,8 +83,9 @@ class Admin extends BaseController {
         $prijavaModel->where('idR',$id);
         $prijavaModel->delete();
 
-        $this->prikaz_stranice();          
-            
+        //$this->prikaz_stranice();          
+            $response_array='recept je ostavljen';
+            echo json_encode($response_array);   
 
     }
     
@@ -94,7 +95,7 @@ class Admin extends BaseController {
 	 *
 	 * @return void
 	 *
-	 * @version 1.0
+	 * @version 1.1
 	 */
     public function izbaci(){
             
@@ -105,8 +106,9 @@ class Admin extends BaseController {
         $prijavaModel->delete();
         $receptiModel->delete($id);
 
-        $this->prikaz_stranice();
-            
+      //  $this->prikaz_stranice();
+            $response_array='recept je uklonjen';
+            echo json_encode($response_array);    
         
     }
 

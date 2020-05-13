@@ -13,7 +13,7 @@ use App\Models\PrijavaModel;
 /**
  * Gost - klasa zadužena za prikaz odgovarajuće početne stranice neprivilegovanog korisnika i obavljanja logovanja i registracije novog korisnika
  *
- * @version 1.3
+ * @version 1.4
  */
 
 class Gost extends BaseController
@@ -47,7 +47,7 @@ class Gost extends BaseController
 	 *
 	 * @return RedirectResponse|void
 	 *
-	 * @version 1.1
+	 * @version 1.2
 	 *
 	 */
     public function login_provera() {
@@ -82,10 +82,9 @@ class Gost extends BaseController
         $_GET['body']='body';
         $_GET['izbor']='main';
 
-            return $this->prikaz_stranice();
+        return redirect()->to(site_url('Korisnik/prikaz_stranice'));
         } else {
-            header("Location: ".site_url("Admin/prikaz_stranice"));
-            exit;
+            return redirect()->to(site_url('Admin/prikaz_stranice'));
         }
     }
     
