@@ -11,7 +11,7 @@ use CodeIgniter\Filters\FilterInterface;
 /**
  * AdminFilter - klasa zadužena za filtiriranje zahteva za prikaz stranica koje generiše kontroler Admin
  *
- * @version 1.0
+ * @version 1.1
  */
 
 class AdminFilter implements FilterInterface
@@ -45,8 +45,4 @@ class AdminFilter implements FilterInterface
 
     //--------------------------------------------------------------------
 
-    public function after(RequestInterface $request, ResponseInterface $response)
-    {
-        // Do something here
-    }
 }

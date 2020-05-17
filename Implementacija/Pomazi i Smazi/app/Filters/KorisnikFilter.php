@@ -11,7 +11,7 @@ use CodeIgniter\Filters\FilterInterface;
 /**
  * KorisnikFilter - klasa zadužena za filtiriranje zahteva za prikaz stranica koje generiše kontroler Korisnik
  *
- * @version 1.0
+ * @version 1.1
  */
 
 class KorisnikFilter implements FilterInterface
@@ -40,8 +40,4 @@ class KorisnikFilter implements FilterInterface
 
     //--------------------------------------------------------------------
 
-    public function after(RequestInterface $request, ResponseInterface $response)
-    {
-        // Do something here
-    }
 }
