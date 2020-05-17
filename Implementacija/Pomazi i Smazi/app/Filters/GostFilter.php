@@ -10,7 +10,7 @@ use CodeIgniter\Filters\FilterInterface;
  * 
  * GostFilter - klasa zadužena za filtiriranje zahteva za prikaz stranica koje generiše kontroler Gost
  *
- * @version 1.1
+ * @version 1.2
  */
 
 class GostFilter implements FilterInterface
@@ -36,7 +36,7 @@ class GostFilter implements FilterInterface
                 $_GET['izbor']='svi_recepti';
                 return redirect()->to(site_url('Korisnik/prikaz_stranice'));
             } else {
-                return redirect()->to(site_url('Gost/index_stranica'));
+                return redirect()->to(site_url('Admin/prikaz_stranice'));
             }
         }
     }
