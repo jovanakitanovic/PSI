@@ -41,6 +41,10 @@ class GostFilter implements FilterInterface
         }
     }
 
+    public function after(RequestInterface $request, ResponseInterface $response) {
+        
+    }
+
     //--------------------------------------------------------------------
 
 }

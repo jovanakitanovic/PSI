@@ -199,7 +199,7 @@ class Gost extends BaseController
                 $i++;
                 
             }
-            $body='body';
+            $body='body_B';
             break;    
           
             case 'svakojaka_testa':
@@ -212,7 +212,7 @@ class Gost extends BaseController
                 $i++;
                 
             }
-            $body='body';
+            $body='body_B';
             break;    
              
             case 'izvrsni_kuvar':

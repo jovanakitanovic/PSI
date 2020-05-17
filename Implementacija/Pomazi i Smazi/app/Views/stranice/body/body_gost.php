@@ -18,12 +18,18 @@
            }
            
           $k=new \App\Controllers\Korisnik();
-           
-         for ($i=0;$i<1;$i++){   
+          
+           $input = dirname(__DIR__);
+           $arr1 = explode("\\", $input);
+           $output = array_slice($arr1, -4, 1);
+           $output = implode(',', $output);
+           $path = "http://localhost/" . $output;
+
+for ($i=0;$i<1;$i++){   
           foreach ($recepti as $recept) {
 
           $imageProperties = [
-            'src' => "http://localhost/ps/$recept->slika",
+            'src' => $path."/$recept->slika",
             'alt' => "$recept->slika",
             'width' => '90%',
              ];

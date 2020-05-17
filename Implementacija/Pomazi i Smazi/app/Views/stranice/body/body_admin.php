@@ -5,12 +5,17 @@
         <?php   
          
         $k=new \App\Controllers\Admin();
-           
+             $input=dirname(__DIR__);
+             $arr1 =  explode("\\", $input);
+             $output = array_slice($arr1, -4, 1);
+             $output=implode(',', $output);
+             $path= "http://localhost/".$output;
+             
         for ($i=0;$i<1;$i++){   
             foreach ($recepti as $recept) {
 
             $imageProperties = [
-            'src' => "http://localhost/ps/{$recept['recept']->slika}",
+            'src' => $path."/{$recept['recept']->slika}",
             'alt' => "{$recept['recept']->slika}",
             'width' => '90%',
             ];
