@@ -6,6 +6,7 @@
  * @version 1.1
  */
 
+
 use CodeIgniter\Model;
 
 /**
@@ -21,6 +22,11 @@ class KorisnikModel extends Model
         protected $returnType = 'array';
         
         protected $allowedFields = ['ime', 'prezime', 'username', 'sifra', 'admin'];
+
+/**
+*	funkcija koja dohvata sve korisnike iz baze korisnik
+*	@version 1.0
+*/  
         
         public function pretragaUsername($username) {
             return $this->where('username', $username)->findAll();

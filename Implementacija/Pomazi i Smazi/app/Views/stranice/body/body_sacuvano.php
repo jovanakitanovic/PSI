@@ -43,7 +43,7 @@
            echo "{$recept->sastojci}  <hr/>";
 
            echo "{$recept->priprema}  <hr/>";
-           echo anchor("Korisnik/izbaci?id=$recept->id", "<input type='button' class='btn btn-danger'  value='izbaci' />");
+           echo "<input type='button' onclick='izbaci("."$recept->id".")' class='btn btn-danger' value='izbaci'>";
            echo "&nbsp &nbsp ";
            echo " <br/><hr/><br/><br/>";
 
@@ -62,6 +62,33 @@
             ?>
    
     </form>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type='text/javascript'>    
+      
+    function izbaci(id)
+    { 
+    
+        $.ajax({
+             url:"http://localhost:8080/index.php/Korisnik/izbaci",
+             method: 'GET',
+             data: {id:id},
+             dataType: 'json',
+             timeout: 3000,
+          success: function(status){
+          if(status!="recept je izbacen")
+             alert (status);
+            location.reload(true); 
+          $('#pagination').html(status.pagination);
+          },error:function(error){
+              console.log(error);
+        }
+        });
+  
+     }
+     
+  </script>
+  
 </table>
 </td>
 </tr>

@@ -21,13 +21,14 @@ use App\Models\PrijavaModel;
 
 class Admin extends BaseController {
 
-    /**
-	 * Funkcija koja obezbeđuje prikaz početne stranice - postavlja odgovarajući header i meni i pronalazi sadržaj koji će biti prikazan
-	 *
-	 * @return void
-	 *
-	 * @version 1.1
-	 */
+     /**
+     * Funkcija koja obezbeđuje prikaz početne stranice - postavlja odgovarajući header i meni i pronalazi sadržaj koji će biti prikazan
+     *
+     * @return void
+     *
+     * @version 1.1
+     */
+    
     public function prikaz_stranice(){
         
         $recepti=array();
@@ -55,26 +56,28 @@ class Admin extends BaseController {
      
     }
     
-    /**
-	 * Funkcija koja je zadužena za uništavanje sesije i preusmeravanje da odgovarajuću stranu kada se administrator izloguje
-	 *
-	 * @return void
-	 *
-	 *@version 1.0
-	 */
+     /**
+     * Funkcija koja je zadužena za uništavanje sesije i preusmeravanje da odgovarajuću stranu kada se administrator izloguje
+     *
+     * @return void
+     *
+     *@version 1.0
+     */
+    
     public function logout(){
         session_destroy();
         echo view("forme/logovanje");
     }
     
-    /**
-	 * Kada administrator pritiskom na odgovarajuće dugme odluči da prijavljeni recept treba da se ostavi,
-	 * poziva se funkcija koja iz baze uklanja prijavu
-	 *
-	 * @return void
-	 *
-	 * @version 1.1
-	 */
+     /**
+     * Kada administrator pritiskom na odgovarajuće dugme odluči da prijavljeni recept treba da se ostavi,
+     * poziva se funkcija koja iz baze uklanja prijavu
+     *
+     * @return void
+     *
+     * @version 1.1
+     */   
+    
     public function ostavi()
     {
           
@@ -89,14 +92,15 @@ class Admin extends BaseController {
 
     }
     
-    /**
-	 * Kada administrator pritiskom na odgovarajuće dugme odluči da prijavljeni recept treba da se ukloni,
-	 * poziva se funkcija koja iz baze uklanja prijavu i sam prijavljeni recept
-	 *
-	 * @return void
-	 *
-	 * @version 1.1
-	 */
+     /**
+     * Kada administrator pritiskom na odgovarajuće dugme odluči da prijavljeni recept treba da se ukloni,
+     * poziva se funkcija koja iz baze uklanja prijavu i sam prijavljeni recept
+     *
+     * @return void
+     *
+     * @version 1.1
+     */    
+    
     public function izbaci(){
             
         $prijavaModel=new PrijavaModel();

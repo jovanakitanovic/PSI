@@ -30,11 +30,11 @@
            echo "{$recept['recept']->sastojci}  <hr/>";
 
            echo "{$recept['recept']->priprema}  <hr/>";
-           echo "Broj prijava: ".$recept['broj'];
+           echo "<b>Broj prijava: ".$recept['broj']."</b>";
            echo "&nbsp &nbsp ";
-           echo anchor("Admin/izbaci?id={$recept['recept']->id}", "<input type='button' class='btn btn-danger'  value='izbaci' />");
+           echo "<input type='button' onclick='ukloni("."{$recept['recept']->id}".")' class='btn btn-danger' value='ukloni'>";
            echo "&nbsp &nbsp ";
-           echo anchor("Admin/ostavi?id={$recept['recept']->id}", "<input type='button' class='btn btn-success'  value='ostavi' />");
+           echo "<input type='button' onclick='ostavi("."{$recept['recept']->id}".")' class='btn btn-success' value='ostavi'>";
            echo "&nbsp &nbsp ";
            echo " <br/><hr/><br/><br/>";
          
@@ -53,6 +53,53 @@
             ?>
    
     </form>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type='text/javascript'>    
+      
+    function ukloni(id)
+    { 
+   
+        $.ajax({
+             url:"http://localhost:8080/index.php/Admin/izbaci",
+             method: 'GET',
+             data: {id:id},
+             dataType: 'json',
+             timeout: 3000,
+          success: function(status){
+          if(status!="recept je uklonjen")
+             alert (status);
+            location.reload(true); 
+          $('#pagination').html(status.pagination);
+          },error:function(error){
+              console.log(error);
+        }
+        });
+  
+     }
+     
+    function ostavi(id)
+    { 
+     
+        $.ajax({
+             url:"http://localhost:8080/index.php/Admin/ostavi",
+             method: 'GET',
+             data: {id:id},
+             dataType: 'json',
+             timeout: 3000,
+          success: function(status){
+          if(status!="recept je ostavljen")
+             alert (status);
+            location.reload(true); 
+          $('#pagination').html(status.pagination);
+          },error:function(error){
+              console.log(error);
+        }
+        });  
+     }
+     
+  </script>
+  
 </table>
 </td>
 </tr>

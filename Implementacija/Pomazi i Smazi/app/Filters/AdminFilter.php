@@ -1,4 +1,5 @@
- <?php namespace App\Filters;
+<?php namespace App\Filters;
+
  /**
  * Autor: Maja Ličina 17/0506
  */
@@ -12,35 +13,40 @@ use CodeIgniter\Filters\FilterInterface;
  *
  * @version 1.0
  */
-class AdminFilter implements FilterInterface {
-	
-	/**
-	 * Funkcija koja vrši filtriranje pre poziva traženog kontrolera
-	 *
-	 * @return RedirectResponse
-	 *
-	 * @param RequestInterface $request
-	 *
-	 */
+
+class AdminFilter implements FilterInterface
+{
+    
+/**
+ * Funkcija koja vrši filtriranje pre poziva traženog kontrolera
+ *
+ * @return RedirectResponse
+ *
+ * @param RequestInterface $request
+ *
+ */
+    
     public function before(RequestInterface $request)
     {
-        $session = session();
+        $session=session();
         if($session->has('id')) {
-            $korisnikModel = new \App\Models\KorisnikModel();
-            $korisnik = $korisnikModel->find($session->get('id'));
-            if($korisnik['admin'] == 0) {
-				// ako poziv vrši ulogovani korisnik, i ako taj korisnik nije admin, vršiće se redirekcija na početnu stranu privilegovanog korisnika
-                $_GET['meni'] = 'meni_pocetna';
-                $_GET['body'] = 'body';
-                $_GET['izbor'] = 'svi_recepti';
+            $korisnikModel=new \App\Models\KorisnikModel();
+            $korisnik=$korisnikModel->find($session->get('id'));
+            if($korisnik['admin']==0) {
+                $_GET['meni']='meni_pocetna';
+                $_GET['body']='body';
+                $_GET['izbor']='svi_recepti';
                 return redirect()->to(site_url('Korisnik/prikaz_stranice'));
             } 
         } else {
-			// ako poziv vrši neulogovani korisnik, vršiće se redirekcija na login formu
-            return redirect()->to(site_url('Gost/index_stranica'));
+            return redirect()->to(site_url('Gost/gost_pristup'));
         }
     }
 
     //--------------------------------------------------------------------
 
+    public function after(RequestInterface $request, ResponseInterface $response)
+    {
+        // Do something here
+    }
 }
