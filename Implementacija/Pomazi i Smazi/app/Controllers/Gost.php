@@ -317,11 +317,13 @@ class Gost extends BaseController
     /**
     * Funkcija koja otvara stranicu za logovanje
     *
-    * @version 1.0
+    * @version 1.1
     */
         
         public function login(){                    // u suštini isto kao i Korisnik/logout samo što je ovako lepše spakovano
-             echo view("forme/logovanje");
+             $_SESSION['izbor']='sva_jela';
+            $_SESSION['meni']='meni_pocetna';
+            return $this->index_stranica();
         }
 
 	//--------------------------------------------------------------------
