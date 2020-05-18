@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 18, 2020 at 09:23 PM
--- Server version: 8.0.18
+-- Generation Time: May 18, 2020 at 11:14 PM
+-- Server version: 5.7.28
 -- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
   `admin` varchar(1) DEFAULT '0',
   `ocena` decimal(10,2) DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `korisnik`
@@ -56,7 +56,8 @@ INSERT INTO `korisnik` (`id`, `username`, `ime`, `prezime`, `sifra`, `admin`, `o
 (24, 'luka', 'luka', 'luka', '35c5a8409e42386fd692d5ab1d1edc161939471b0aab88c8e47a6bbf3deffac813eb6a0c58531e7961556798de07cbb83becd3f168d90e35d9c313b5ff99898e', '0', '2.00'),
 (25, 'ana', 'ana', 'ana', '40c41475561375aa28d4d035445525f0e8f6bfaba1fdb4bc0c30dec2de112d7c7df168bdced38b4d87326b4c3f226c2ba1a09f4384451b0bc5f9c108c1c1df32', '0', '3.00'),
 (28, 'petrija', 'petrija', 'petrija', 'e3e34781ee201b7a935a24eeff9bff4d933cdcd6841d81dfe927bbd0a56e81e898a05efc3aa79dca6e9cc0ad4b4d45649647807860738a6b88ff16d70b18ec31', '0', '2.89'),
-(29, 'ema', 'emilija', 'radivojevic', '9a3e5184a08be8ca366af77bd2f9a53fd950239f9bcd6f13212f30bedf39b95de2e8b46c412554885393c621718572a7cabb23f44a1d4f6e38d13577bd8384d9', '0', '3.67');
+(29, 'ema', 'emilija', 'radivojevic', '9a3e5184a08be8ca366af77bd2f9a53fd950239f9bcd6f13212f30bedf39b95de2e8b46c412554885393c621718572a7cabb23f44a1d4f6e38d13577bd8384d9', '0', '3.67'),
+(33, 'nenad', 'Nenad', 'Kitanovic', '690ce8da49c5f2e6fb54dc7a48c4a0d560853b764312dca0317f8118bd39fb8c86bf6d14648126a08f002b1880b07ca0a7b8bf502fc36532f2e36bb707b79506', '0', '1.00');
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `korisnikocena` (
   `idR` int(11) NOT NULL,
   PRIMARY KEY (`idK`,`idR`),
   KEY `fk_idr` (`idR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `korisnikocena`
@@ -106,7 +107,9 @@ INSERT INTO `korisnikocena` (`idK`, `idR`) VALUES
 (19, 143),
 (20, 143),
 (23, 143),
-(20, 144);
+(19, 144),
+(20, 144),
+(19, 145);
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `prijava` (
   `idR` int(11) NOT NULL,
   PRIMARY KEY (`idK`,`idR`),
   KEY `strani_kljuc_idr` (`idR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `prijava`
@@ -129,7 +132,8 @@ CREATE TABLE IF NOT EXISTS `prijava` (
 INSERT INTO `prijava` (`idK`, `idR`) VALUES
 (25, 135),
 (28, 135),
-(28, 137);
+(28, 137),
+(19, 138);
 
 -- --------------------------------------------------------
 
@@ -151,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `recepti` (
   `ocena` int(11) DEFAULT '0',
   `brocena` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recepti`
@@ -168,7 +172,8 @@ INSERT INTO `recepti` (`id`, `slika`, `sastojci`, `priprema`, `k1`, `k2`, `k3`, 
 (141, 'uploads/snikers-stanglice.jpg', 'Podloga:\r\n\r\n300 gr mlečne čokolade,\r\n70 gr kikiriki putera.\r\nNugat fil:\r\n\r\n60 gr putera,\r\n60 gr kikiriki putera,\r\n250 gr neslanog kikirikija,\r\n250 gr šećera,\r\nšam (75 ml vode, 100 gr šećera, 3 belanca),\r\n1 vanilin šećer,\r\n60 ml kondezovanog mleka (6 gr putera, 10 gr šećera u prahu, 25 gr mleka u prahu, 20 ml provrele vode, 5 kapi arome vanile).\r\nKaramel fil:\r\n\r\n1 pakovanje karamel bombona (mekih),\r\n60 ml slatke pavlake.', 'Otopiti 150 gr čokolade i 35 gr kikiriki putera. Uzeti tepsiju i sipati prvi sloj koji će se praviti isto kao i završni.\r\nStaviti u frižider da se stegne.\r\nNugat fil: Kondenzovano mleko napraviti tako što se svi sastojci stave u blender i miksuju oko 3 minuta. U posudu staviti puter, kikiriki puter, šećer i na kraju napravljeno kondenzovano mleko. Držati na vatri dok se šećer ne otopi. Šam napraviti tako sto se belanca čvrsto umute. Vodu sa šećerom staviti na vatru, sačekati da se šećer otopi. Optimalna temperatura sirupa je 120 stepeni. Skloniti sa vatre i dodati u šam, mešajući.\r\nPomešati šam i prethodno napravljen nugat fil, dodati sečen kikiriki, a zatim preliti preko podloge stavljene u tepsiju. Vratiti u frižider.\r\nKaramel bombone sa slatkom pavlakom otopiti u mikrotalasnoj pećnici. Promešati i sipati preko nugat fila. Opet vratiti u frižider i nakon pola sata preliti ostatkom čokolade i putera (150gr + 35 gr).\r\nOhlađeni kolač seći na štangle. Po želji se kolač može seći na veću veličinu i preliti čokoladom, kako bi se dobio autentičniji izgled čokoladica.', '0', '1', '0', 22, 'Snikers štanglice', 10, 5),
 (142, 'uploads/karbonara.jpg', 'sveža domaća testenina,\r\n150 gr mesnate slanine,\r\n2 kašike maslinovog ulja,\r\n2 žumanca,\r\n2dcl kisele pavlake,\r\n1 čen belog luka,\r\npo ukusu biber, so, seckani peršun,\r\nrendani parmezan', 'Na dve kašike maslinovog ulja ispržite sitno seckanu slaninudok ne postane blago hrskava, Pred sam kraj, dodati propasiran čen belog luka i promešati.\r\n\r\nU posebnoj posudi dobro izmešati žumanca sa kiselom pavlakom, dodati peršun, mleveni biber i soli po ukusu. Ovu smesu sipati u tiganj sa dinstanom slaninom i pržiti uz mešanje oko 2 minuta, potom skloniti sa šporeta\r\n\r\nSkuvati pastu uz napomenu da se pasta kuva u vodi bez ulja (ovo je tipična greška na našim područjima, ulje nije dobro sipati u vodu). Sveža, domaća pasta koju svakoga dana proizvodimo u Pasta Baru, idealna je jer se kuva svega par minuta i odlično upija sos.\r\n\r\nProcediti ih i sipati u veću, dublju činiju. Preliti ih polovinom smese i dobro izmešati, kako bi se pasta i preliv dobro sjedinili. Prelijte ostatkom preliva pospite sa malo peršuna i rendanog parmezana.', '0', '0', '1', 21, 'Pasta karbonara', 5, 1),
 (143, 'uploads/cezar.jpg', '100 g dimljene slanine,\r\n200 g belog pilećeg mesa,\r\n30 g parmezana,\r\n3 čena belog luka,\r\n2 parčeta tost hleba,\r\nveća glavica zelene salate,\r\n2 čeri paradajza,\r\nsok od 1 limuna,\r\npavlaka,\r\nmajonez,\r\nmaslinovo ulje,\r\nbiber,\r\nso', 'Propržiti iseckanu slaninu bez dodavanja masnoće. Izvaditi i staviti na papirnu salvetu da upije masnoću. Na teflonu ispeći piletinu i kad se prohladi iseći je dugačke trake. Hleb iseći na kocke. Pomešati sa iseckanim belim lukom i propržiti na masnoći koju je pustila slanina. Izvaditi i staviti na salvetu.\r\nUmutiti maslinovo ulje sa sokom od limuna, posoliti i pobiberiti. Dobijenim dresingom (sa maslinovim uljem) preliti opranu i iscepkanu zelenu salatu. Preko salate naređati piletinu, slaninu, krutone (prepečeni hleb), čeri paradajz, krupno narendani parmezan i preko toga preliti umućenu pavlaku s majonezom.', '1', '0', '0', 21, 'Cezar salata', 3, 3),
-(144, 'uploads/gibanica.jpg', '500 gr gotovih kora,\r\n500 gr sitnog sira,\r\n3-5 jaja,\r\n1 solja jogurta,\r\n1 solja kisele vode(obicna voda sa dve kasicice pr.za pecivo),\r\n1/2 solja ulja,\r\n1 kasicica soli', '1. Zagrejte rernu na 200 st.C i pripremite pleh sa hartijom za pecenje.\r\n2. Pripremite preliv:\r\nPromesajte jaja, jourt, vodu ,ulja i so u jednolicnu masu. Prvo malo izmutite jaja, pa onda dodajte ostalo.\r\n3. Rasposli se jedna kora na radni sto i poprska se ravnomerno sa malo sitnog sira. Preko ove se stavi druga kora i opet se poprska sa malo sitnog sira, pa treca i sve tako dok se kore i sir ne potrose. Znaci, sve kore jedna preko druge.\r\n4. Onda se uviju u rolat i podele sa malim zasecima na deset jednakih delova. Ja to radim na dva prsta rastojanje i izagju deset parceta. Onga se ostrim nozem iseku parcici. Kako isecete parce, tako ga stavite u pleh, sa sirom stranom prema dole. Poregjajte sve parcice jedan do drugoga u dva reda, ako je plek dugacak. Ako je okrugli, onda redite naokolo i zavsavate u sredini.\r\n5. Pazljivo prelijte rolatice sa prelivom, tako da svaki rolatic dobije istu kolicinu preliva, da bi posle bilo jednako socno.\r\n6. Pecite oko 40 min. ili dok gibanica dobro ne porumeni.', '0', '0', '1', 21, 'Gibanica', 4, 1);
+(144, 'uploads/gibanica.jpg', '500 gr gotovih kora,\r\n500 gr sitnog sira,\r\n3-5 jaja,\r\n1 solja jogurta,\r\n1 solja kisele vode(obicna voda sa dve kasicice pr.za pecivo),\r\n1/2 solja ulja,\r\n1 kasicica soli', '1. Zagrejte rernu na 200 st.C i pripremite pleh sa hartijom za pecenje.\r\n2. Pripremite preliv:\r\nPromesajte jaja, jourt, vodu ,ulja i so u jednolicnu masu. Prvo malo izmutite jaja, pa onda dodajte ostalo.\r\n3. Rasposli se jedna kora na radni sto i poprska se ravnomerno sa malo sitnog sira. Preko ove se stavi druga kora i opet se poprska sa malo sitnog sira, pa treca i sve tako dok se kore i sir ne potrose. Znaci, sve kore jedna preko druge.\r\n4. Onda se uviju u rolat i podele sa malim zasecima na deset jednakih delova. Ja to radim na dva prsta rastojanje i izagju deset parceta. Onga se ostrim nozem iseku parcici. Kako isecete parce, tako ga stavite u pleh, sa sirom stranom prema dole. Poregjajte sve parcice jedan do drugoga u dva reda, ako je plek dugacak. Ako je okrugli, onda redite naokolo i zavsavate u sredini.\r\n5. Pazljivo prelijte rolatice sa prelivom, tako da svaki rolatic dobije istu kolicinu preliva, da bi posle bilo jednako socno.\r\n6. Pecite oko 40 min. ili dok gibanica dobro ne porumeni.', '0', '0', '1', 21, 'Gibanica', 8, 2),
+(145, 'uploads/bacon-eggs.jpg', '12 svežih jaja\r\n150 g dobre suve slanine\r\n1 glavicu crnog luka\r\nmalo peršunovog i celerovog lišća\r\nmalo sitnog belog bibera\r\nmalo soli (prema tome koliko je slanina slana)', 'Dobra kajgana uvek je prijatna na stolu, bilo kao zasebno jelo, bilo kao pojačanje slabijeg ručka.\r\nLuk iseckati vrlo sitno, isto tako i lišće od peršuna i celera, slaninu izrezati u sitne, podjednake kocke, bez kožurice, jaja razbijati i izmešati u zasebnoj zdeli.\r\n\r\nSa jajima promešati peršunovo lišće, biber i malo soli, dobro razbiti jaja, da se potpuno izmešaju belanca i žumanca.U tiganj staviti iseckanu slaninu i staviti na jaku vatru, čim se slanina počne topiti, spustiti u nju luk i mešati ga varjačom dok malo ne požuti. Tada dodati u tiganj jaja i neprekidno mešati da se jaja ne zgrudvaju, a paziti da se ne uhvate za dno. Mešati tako na jakoj vatri pet-šest minuta, da se načini jednolična ali prilično žitka masa. Sipati i nositi na sto.', '1', '0', '0', 33, 'pržena jaja sa slaninom', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -182,13 +187,15 @@ CREATE TABLE IF NOT EXISTS `sacuvano` (
   `idK` int(11) NOT NULL,
   PRIMARY KEY (`idR`,`idK`),
   KEY `fkidk` (`idK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sacuvano`
 --
 
 INSERT INTO `sacuvano` (`idR`, `idK`) VALUES
+(138, 19),
+(140, 19),
 (133, 20),
 (139, 20),
 (142, 20),
