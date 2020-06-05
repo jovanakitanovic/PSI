@@ -1,0 +1,1072 @@
+{
+  "id": "37bcce78-9553-44bb-9860-779678415e01",
+  "version": "2.0",
+  "name": "Dodavanje novog recepta",
+  "url": "http://localhost:8080/",
+  "tests": [{
+    "id": "48150642-b8e3-4624-8c01-2abcda5993f9",
+    "name": "Dodavanje novog recepta - uspeh",
+    "commands": [{
+      "id": "fbb07679-b00c-415c-8b7a-ba8016621dd1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37fe1677-fde9-47b6-9986-5e2aed701ac8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1606x863",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f63818fe-6744-4461-ad58-c33c1825932c",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "948246eb-896d-4a0f-8a48-3c3e4c75da9c",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "ana"
+    }, {
+      "id": "d2fd9582-299d-43e5-a13c-285ae0cfab50",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "ana"
+    }, {
+      "id": "03434836-052d-4f22-b1dc-227049264f15",
+      "comment": "",
+      "command": "click",
+      "target": "name=ulogujse",
+      "targets": [
+        ["name=ulogujse", "name"],
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@name='ulogujse']", "xpath:attributes"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d28615d-36ac-4ca1-b572-0478372acbeb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=moj nalog",
+      "targets": [
+        ["linkText=moj nalog", "linkText"],
+        ["css=.text-info", "css:finder"],
+        ["xpath=//a[contains(text(),'moj nalog')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/index.php/Korisnik/prikaz_stranice?meni=moj_nalog&izbor=moj_nalog']", "xpath:href"],
+        ["xpath=//tr[8]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'moj nalog')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17b1a2f4-27f1-40b7-ad73-f43b7c43e7b7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=objavi novi recept",
+      "targets": [
+        ["linkText=objavi novi recept", "linkText"],
+        ["css=.text-warning", "css:finder"],
+        ["xpath=//a[contains(text(),'objavi novi recept')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/index.php/Korisnik/novi_recept']", "xpath:href"],
+        ["xpath=//tr[5]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'objavi novi recept')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fe31de9-ec16-40de-b53f-6ba871b9d898",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa37932b-bffd-4fb4-84e3-6b08a2187379",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(1) font",
+      "targets": [
+        ["css=tr:nth-child(1) font", "css:finder"],
+        ["xpath=//font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje naziv!"
+    }, {
+      "id": "3f108470-c704-4beb-91e3-9e2d8b6e0c85",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Niste odabrali ni jednu od kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Niste odabrali ni jednu od kategorija!"
+    }, {
+      "id": "709d311b-3ca4-4ca7-91a2-c14c10aa5fcd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "338a2f56-4ee5-4094-9f57-5c4d2075dad2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "5505397c-935e-4389-bfc4-a26a26d838e5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "bab35820-73aa-45dc-8eaa-c89b54e6e449",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=naziv", "name"],
+        ["css=#fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0eb6d18-7607-4c45-80f9-ff8238491eeb",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=naziv", "name"],
+        ["css=#fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "guakamole"
+    }, {
+      "id": "4c0828c6-222c-4e84-af45-aa3e6f5f651c",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija1",
+      "targets": [
+        ["name=kategorija1", "name"],
+        ["css=tr:nth-child(2) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='kategorija1']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afe26408-a78d-48d4-943c-4e630a506bda",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija3",
+      "targets": [
+        ["name=kategorija3", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='kategorija3']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4ab9bf8-d0b6-4eab-896a-f2ec4aa5dd77",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8dc72de2-fd27-49c8-82ac-fcd661c0cbc5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23765c68-4f06-4504-9e5f-101d9df3cc96",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Odabrali ste previse kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Odabrali ste previse kategorija!"
+    }, {
+      "id": "69ac418b-f9b2-4d1d-b8e4-bfe14ca7dd5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "057b6e3b-e316-44b0-ab7a-13478e3ba712",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Niste odabrali ni jednu od kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Niste odabrali ni jednu od kategorija!"
+    }, {
+      "id": "8f2e212a-63aa-4f38-90a5-cebfed84206a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "2cea0687-8cb3-414b-8601-fc22dbffff07",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "de8ab4e5-27ba-4b19-99be-bcda7bba5c40",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "10788343-2dd4-412a-bf5e-86a635917ccb",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07a74a66-9ee5-4cc3-8a8d-ca9a624b6616",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a309912-8974-4ea5-892f-eecb50ce147a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "a50dfcf7-5a9d-4109-8f04-bff978cfe055",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "c20006d6-3a19-4e0b-9e64-adafdd1528a9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "21cf2fae-39b4-4892-9a04-dfdf7a4c204c",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92b13207-2914-48f9-aeaf-f59cd98f9482",
+      "comment": "",
+      "command": "click",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7da66959-4b0f-4eba-ad3f-d82cdf829033",
+      "comment": "",
+      "command": "click",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fd87ef2-6efc-4748-8290-31b4cd29dc5d",
+      "comment": "",
+      "command": "type",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Guacamole sos za one koji možda još nisu čuli to je sos koji se pravi od zrelog avokada, belog luka, soka limete.\\n\\n"
+    }, {
+      "id": "b5300445-a7dc-439d-8af3-be04090f4a5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d1ee7e6-1984-47f9-953b-12be5fcdbdce",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "754c70e2-309b-467a-a7c5-27075e0f05df",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "4beb870d-44a6-4d00-88b8-88659a00f477",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2ff54df-23f9-4349-a19c-1f75e3eea6b1",
+      "comment": "",
+      "command": "click",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "516d6d65-054a-4bfb-a697-1943ec04825e",
+      "comment": "",
+      "command": "click",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85478cb1-7c04-466a-80c0-ae6e0bbf133b",
+      "comment": "",
+      "command": "type",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": "\\nPo mom ukusu dodam malo i crnog luka. . i ljute papričice po mogućnosti halapenjo ili serrano koje sada mogu da s enabave i kod nas. Neko dodaje paradajz.\\n\\nMože i korijander, daje mu baš dobar šmek.\\n\\nMoram da podvučem da avokado mora da bude zreo, jer ako nije na guacamole sos možete da zaboravite. Tekstura u opšte neće izgledati i ličiti na sos.\\n\\nTreba lako da se vadi kašičicom\\nSastojke spojite ili ubacivanjem u blender ili viljuškom zgnječite sve sastojke i dobijete guacamole sos."
+    }, {
+      "id": "037773e7-4ccc-4dd2-8b9e-e22af24fe890",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c79e904-cdf2-406d-8f1c-9d9beedec9aa",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d094e020-c900-4013-badc-5865d58cc340",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "3063d33a-1715-457d-8a5b-166af9c4a0cd",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f88ad85f-8547-478f-9ba1-b85313956c0e",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9e22a67-1c7e-403e-8a9a-597e8117e357",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\Users\\Jovana\\Desktop\\SEMESTAR6\\PSI\\slika\\Gvakamole-sos-–-recepti.jpg"
+    }, {
+      "id": "292fb611-c92f-4c6a-be81-69f653370012",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6a52ec2-5b5c-413f-88a5-362563765bbe",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=moja jela",
+      "targets": [
+        ["linkText=moja jela", "linkText"],
+        ["css=tr:nth-child(1) > td > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'moja jela')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/index.php/Korisnik/prikaz_stranice?meni=moj_nalog&izbor=moja_jela']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'moja jela')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9acbde87-7eb8-4c2c-a35f-084f46a0e3cd",
+      "comment": "",
+      "command": "click",
+      "target": "name=izloguj se",
+      "targets": [
+        ["name=izloguj se", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@name='izloguj se']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0d3f3660-c7f8-4fba-b8dc-512cedccf20f",
+    "name": "Dodavanje novog recepta - korisnik odustaje",
+    "commands": [{
+      "id": "add53e11-4689-41ef-bd46-a9c5db7f3be3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9dc03701-4c46-4b27-a784-63d7af1c4d9a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1606x863",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a1ad520-7c22-44e8-a6fc-5b1be0da56a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e904b24c-8c4f-464f-a978-aa155327d943",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "ana"
+    }, {
+      "id": "b965dc10-e7bd-41e9-944b-02b8863be797",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "ana"
+    }, {
+      "id": "afcb7edc-f4e3-41d8-b49b-e506357d6263",
+      "comment": "",
+      "command": "click",
+      "target": "name=ulogujse",
+      "targets": [
+        ["name=ulogujse", "name"],
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@name='ulogujse']", "xpath:attributes"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3a4c976-4d54-429a-b914-a73497a70547",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=moj nalog",
+      "targets": [
+        ["linkText=moj nalog", "linkText"],
+        ["css=.text-info", "css:finder"],
+        ["xpath=//a[contains(text(),'moj nalog')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/index.php/Korisnik/prikaz_stranice?meni=moj_nalog&izbor=moj_nalog']", "xpath:href"],
+        ["xpath=//tr[8]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'moj nalog')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f87d26ae-566d-418c-87ba-5972b73f3c64",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=objavi novi recept",
+      "targets": [
+        ["linkText=objavi novi recept", "linkText"],
+        ["css=.text-warning", "css:finder"],
+        ["xpath=//a[contains(text(),'objavi novi recept')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/index.php/Korisnik/novi_recept']", "xpath:href"],
+        ["xpath=//tr[5]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'objavi novi recept')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1289361-61f3-40a5-a600-9566c07df495",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9169137d-f558-4403-8969-7d675b46136d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(1) font",
+      "targets": [
+        ["css=tr:nth-child(1) font", "css:finder"],
+        ["xpath=//font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje naziv!"
+    }, {
+      "id": "25428ac1-ccb7-48c0-a71e-54c38a30eb06",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Niste odabrali ni jednu od kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Niste odabrali ni jednu od kategorija!"
+    }, {
+      "id": "83a4f7a0-5bc2-4f47-83f2-03634df5ed76",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "b0445c33-9017-4fd7-8744-923a9ece8ac6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "ffe886ec-a5b6-46fd-952c-867d8bb5b1bd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "19d464b9-3d29-4b47-bb43-8db3858edb57",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=naziv", "name"],
+        ["css=#fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2aec1d29-8325-44fd-8f80-ab0d83791660",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=naziv", "name"],
+        ["css=#fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "guakamole"
+    }, {
+      "id": "62bb2edd-b6ef-476e-96a3-cf95b2e27e97",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "410cf933-1b1a-47af-849a-dacf54fe13a2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Niste odabrali ni jednu od kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Niste odabrali ni jednu od kategorija!"
+    }, {
+      "id": "0253a3b5-79dd-462f-8242-66e24dbaa63d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "6055e510-be34-4a31-a9da-947083cbf87d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "601dde38-a23b-4e50-a73d-e4bb34f44304",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "6c1364cc-35c5-41fd-8f09-c09e6ef0f3b9",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ac39767-0f7c-41d5-92c0-c9a4dd122eba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b412f21-9678-4b63-9fc5-dbb1071d62fe",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli sastojke!"
+    }, {
+      "id": "85d5b35d-ffd9-4461-bb29-95bfed5ec1df",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "46933518-ba38-40cb-b87f-d4350bd3ce17",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "5c2119ed-d751-4793-9230-5eed4bb36f31",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "752154d4-43ee-4638-9f3a-f862954cec24",
+      "comment": "",
+      "command": "click",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf8a58a9-f9b8-4ef5-8a4b-db4f195d5a26",
+      "comment": "",
+      "command": "click",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0c660e7-2b6b-4a66-84ef-1d4db78f365e",
+      "comment": "",
+      "command": "type",
+      "target": "id=w3mission",
+      "targets": [
+        ["id=w3mission", "id"],
+        ["name=sastojci", "name"],
+        ["css=tr:nth-child(3) #w3mission", "css:finder"],
+        ["xpath=//textarea[@id='w3mission']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Guacamole sos za one koji možda još nisu čuli to je sos koji se pravi od zrelog avokada, belog luka, soka limete.\\n\\n"
+    }, {
+      "id": "1a52237b-650c-4b6a-a4d9-4bee2bf9f1c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03a34f24-d729-485e-8ae8-280589ca1072",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste uneli nacin pripreme!"
+    }, {
+      "id": "34a18562-5c77-4c24-8db3-c3a7c9af1e57",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "f871f5be-e7b3-40b2-aa38-8a0e59f65786",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija2",
+      "targets": [
+        ["name=kategorija2", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='kategorija2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3553c36d-6eca-4e7e-9e60-7328c3378dea",
+      "comment": "",
+      "command": "click",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d83ca7b-6fee-4afa-8b22-dfd1dc6e1a8c",
+      "comment": "",
+      "command": "click",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "194d9d0b-bd5b-4375-8f02-71b963c1d0e5",
+      "comment": "",
+      "command": "type",
+      "target": "name=priprema",
+      "targets": [
+        ["name=priprema", "name"],
+        ["css=tr:nth-child(4) #w3mission", "css:finder"],
+        ["xpath=(//textarea[@id='w3mission'])[2]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/textarea", "xpath:position"]
+      ],
+      "value": "\\nPo mom ukusu dodam malo i crnog luka. . i ljute papričice po mogućnosti halapenjo ili serrano koje sada mogu da s enabave i kod nas. Neko dodaje paradajz.\\n\\nMože i korijander, daje mu baš dobar šmek.\\n\\nMoram da podvučem da avokado mora da bude zreo, jer ako nije na guacamole sos možete da zaboravite. Tekstura u opšte neće izgledati i ličiti na sos.\\n\\nTreba lako da se vadi kašičicom\\nSastojke spojite ili ubacivanjem u blender ili viljuškom zgnječite sve sastojke i dobijete guacamole sos."
+    }, {
+      "id": "7598caf8-920d-4cd6-b2af-e8c3ea459c43",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='objavi']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1df611a6-e43a-4bea-9c01-c60a8fe18249",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95cf5117-6141-4985-bf8d-bdcd02f2a7b2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(5) font",
+      "targets": [
+        ["css=tr:nth-child(5) font", "css:finder"],
+        ["xpath=//tr[5]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste odabrali sliku!"
+    }, {
+      "id": "2d403be0-4872-4e8f-a1cc-45dd3dd5ff53",
+      "comment": "",
+      "command": "click",
+      "target": "name=odustani",
+      "targets": [
+        ["name=odustani", "name"],
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=//input[@name='odustani']", "xpath:attributes"],
+        ["xpath=//td[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48d736f1-8051-472a-97c0-5ee5ec0f50aa",
+      "comment": "",
+      "command": "click",
+      "target": "name=izloguj se",
+      "targets": [
+        ["name=izloguj se", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@name='izloguj se']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "eefc9c0b-e44f-424e-beec-d6a2b5765f44",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["48150642-b8e3-4624-8c01-2abcda5993f9"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

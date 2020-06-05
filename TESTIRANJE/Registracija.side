@@ -1,0 +1,493 @@
+{
+  "id": "fa0b1b2f-b26a-4b2c-8727-cd60d7319c7e",
+  "version": "2.0",
+  "name": "Registracija",
+  "url": "http://localhost:8080/index.php/Gost/napravi_nalog",
+  "tests": [{
+    "id": "a7a2484f-409c-4d2b-bd91-9540ec0aa3f3",
+    "name": "Uspešno kreiranje naloga",
+    "commands": [{
+      "id": "180781a9-9080-4636-9d5d-f5de0673f86c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Gost/napravi_nalog",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27eceff3-d5c6-44da-97f4-73af6e29cc66",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x863",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bee6268-66d8-4680-a575-ccc198732d5f",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=ime", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43f50ad9-7521-4d04-a7f1-0e6610e8d8cc",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=ime", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Petar"
+    }, {
+      "id": "22fafc46-f229-4259-8976-77553a5f9d29",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezime",
+      "targets": [
+        ["name=prezime", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Petrovic"
+    }, {
+      "id": "279e461f-887c-4679-bf59-e3e38b48390d",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(3) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[3]", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Njegos"
+    }, {
+      "id": "ebde4f82-615a-4e7b-9584-f10e1c48960e",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(4) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[4]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "pera"
+    }, {
+      "id": "ccba2bad-6f99-4279-a6a3-e43c0677fb9f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71e323ec-07f7-432d-a9a3-4f109717f7de",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Njegos"
+    }]
+  }, {
+    "id": "e9496137-d1ad-486e-9286-e35447488329",
+    "name": "Pogresan unos podataka, korisnik vec postoji",
+    "commands": [{
+      "id": "b7b91651-39e4-4b59-9ded-29e59f45c8e1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Gost/napravi_nalog",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aadd152b-7f99-454b-b650-5e27f2342474",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x863",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58fb7930-4016-4b8b-915c-db85e675a607",
+      "comment": "",
+      "command": "click",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=ime", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72a1708e-f16a-4f2e-900f-33a60863360f",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=ime", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "maja"
+    }, {
+      "id": "f9b1c58a-a957-4c6a-b865-2acab79eca45",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "daa42784-1f4e-4da6-9b67-be13805176e3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje prezime!"
+    }, {
+      "id": "a7a84567-19e2-4ede-9494-0b2c9b3f96d1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje username!"
+    }, {
+      "id": "b731d915-e403-4761-b636-b23534c3bfa2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje password!"
+    }, {
+      "id": "f415583a-6a7f-4675-b05e-9feb0eb9400e",
+      "comment": "",
+      "command": "click",
+      "target": "name=prezime",
+      "targets": [
+        ["name=prezime", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "386a8d1c-4b67-4a47-a5ab-40b49a5f9046",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezime",
+      "targets": [
+        ["name=prezime", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Licina"
+    }, {
+      "id": "37ae180e-2354-44ae-8959-fd18d835c9b5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb24106b-e032-4e07-a816-4e7d693abbeb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje username!"
+    }, {
+      "id": "ad3c481d-5823-4373-8943-18110071a4df",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje password!"
+    }, {
+      "id": "19be3694-6cea-4114-87bf-68be5b3835b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "167d9853-e868-4811-b433-b2f626bc8af0",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(3) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[3]", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "268e9ca6-8957-48bc-af4a-2ff837043bae",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(3) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[3]", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "maja"
+    }, {
+      "id": "caa73ec5-9016-4967-b2b2-7afe435782a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34c6532d-c55b-4879-8cda-5fb44aaf282c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje password!"
+    }, {
+      "id": "686730d0-0b91-4b37-a0c4-ee852f2800ce",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(4) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[4]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a0f6b1b-a099-447c-bb37-1ec21ff1c7a4",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(4) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[4]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "maja"
+    }, {
+      "id": "cd78be1c-5200-47d8-a87b-c60455150587",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cea1805-e0f3-464b-ab73-efb971eba46f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"],
+        ["xpath=//font[contains(.,'Korisnik vec postoji.')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik vec postoji."
+    }, {
+      "id": "96e7cd65-ce91-4dc4-a32d-56bf66e3e58d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.table:nth-child(2) tr:nth-child(1)",
+      "targets": [
+        ["css=.table:nth-child(2) tr:nth-child(1)", "css:finder"],
+        ["xpath=//table[2]/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a52f83fb-2403-409b-ba47-365d7cd3cac4",
+      "comment": "",
+      "command": "type",
+      "target": "id=fname",
+      "targets": [
+        ["id=fname", "id"],
+        ["name=ime", "name"],
+        ["css=tr:nth-child(1) #fname", "css:finder"],
+        ["xpath=//input[@id='fname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "663d3fb2-33e7-4f21-b86b-699fe8c4a70c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.table tr:nth-child(2)",
+      "targets": [
+        ["css=.table tr:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "012eabd9-c039-4efc-b945-8c71d2e6cfc5",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezime",
+      "targets": [
+        ["name=prezime", "name"],
+        ["css=tr:nth-child(2) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e28775e-399c-4037-8dda-55ce6ac6a43f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.table tr:nth-child(3)",
+      "targets": [
+        ["css=.table tr:nth-child(3)", "css:finder"],
+        ["xpath=//tr[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83c5e3cd-b938-4335-a8e3-b479b9367bf4",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(3) #fname", "css:finder"],
+        ["xpath=(//input[@id='fname'])[3]", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87dab180-b195-4b32-b565-ae8aa7dd744d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='napravi nalog']", "xpath:attributes"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64cc1b73-f35d-4dd6-aeed-48578cb41025",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(1) font",
+      "targets": [
+        ["css=tr:nth-child(1) font", "css:finder"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'Niste popunili polje ime!')]", "xpath:innerText"]
+      ],
+      "value": "Niste popunili polje ime!"
+    }, {
+      "id": "92200be1-4d79-4d15-a989-b707b929dcc2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) font",
+      "targets": [
+        ["css=tr:nth-child(2) font", "css:finder"],
+        ["xpath=//tr[2]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje prezime!"
+    }, {
+      "id": "d82aa2ba-48a3-4baf-b709-b1600dbd2f5e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) font",
+      "targets": [
+        ["css=tr:nth-child(3) font", "css:finder"],
+        ["xpath=//tr[3]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje username!"
+    }, {
+      "id": "ac90aa34-6f2b-44fa-94b6-86997ce645d9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(4) font",
+      "targets": [
+        ["css=tr:nth-child(4) font", "css:finder"],
+        ["xpath=//tr[4]/td[3]/font", "xpath:position"]
+      ],
+      "value": "Niste popunili polje password!"
+    }, {
+      "id": "a9ca8719-1f11-4f65-9cbb-5897363df3b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=//input[@value='odustani']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a1e79e7e-480a-4ba6-9be3-aa0c3769185c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/index.php/Gost/napravi_nalog"],
+  "plugins": []
+}
