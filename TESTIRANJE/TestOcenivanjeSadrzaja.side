@@ -1,0 +1,97 @@
+{
+  "id": "5d114bb4-ccab-400c-8e0c-49a8fe73a682",
+  "version": "2.0",
+  "name": "TestOcenivanjeSadrzaja",
+  "url": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+  "tests": [{
+    "id": "6ff0dc00-55f1-4d4c-ba6b-e5fa78a3ba79",
+    "name": "Test1 - recept vec ocenjen",
+    "commands": [{
+      "id": "af4b2950-b931-4b8d-8ec4-f4bcf17f15e1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c49b19c2-b4e9-4f1c-8cb7-f6880ab1d90d",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn:nth-child(10)",
+      "targets": [
+        ["css=tr:nth-child(1) > td > table > tbody > tr > td > .btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='5']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bac879ee-cdb7-4555-b304-b14dd248b1d2",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "recept je već ocenjen",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "27edf35f-216b-464a-8825-d034274ef220",
+    "name": "Test2 - ocenjivanje svog recepta",
+    "commands": [{
+      "id": "25746aee-a037-485b-8c65-66ac7befab97",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c70b901-4b78-4e3f-a43e-f016d7acb5d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn:nth-child(10)",
+      "targets": [
+        ["css=tr:nth-child(2) .btn:nth-child(10)", "css:finder"],
+        ["xpath=(//input[@value='5'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/table/tbody/tr/td/input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4ccbd25-b4dd-4703-b20a-e53e5cd8961e",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "ne možete oceniti vaš recept",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b5360c56-03cd-428b-bf90-6392538b4bd1",
+    "name": "Test3 - ocenjivanje tudjeg, neocenjenog recepta",
+    "commands": [{
+      "id": "f4c32d7c-708d-40c5-8bf5-bd3216ff6ad5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7db71fa3-9471-4fc0-b08c-ba55309d9de4",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn:nth-child(10)",
+      "targets": [
+        ["css=tr:nth-child(1) > td > table > tbody > tr > td > .btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='5']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "476742ce-9242-4c8c-9063-8989852d828b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6ff0dc00-55f1-4d4c-ba6b-e5fa78a3ba79"]
+  }],
+  "urls": [],
+  "plugins": []
+}

@@ -1,0 +1,68 @@
+{
+  "id": "1dcc214d-caa9-47d9-9b16-237a7277fe15",
+  "version": "2.0",
+  "name": "TestCuvanjeSadrzaja",
+  "url": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+  "tests": [{
+    "id": "a2e593a1-ccf7-4145-ae2e-7d3bb7e270d8",
+    "name": "Test1 - recept nije sacuvan",
+    "commands": [{
+      "id": "216c5b20-34e7-41fc-9dfd-f028e1aa6d84",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0492e00-36fb-4c86-8a71-bb36a77baf27",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn-primary",
+      "targets": [
+        ["css=tr:nth-child(1) > td > table > tbody > tr > td > .btn-primary", "css:finder"],
+        ["xpath=//input[@value='sacuvaj']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "242444c3-0cab-41b4-b207-2402e05a2faf",
+    "name": "Test2 - recept je vec sacuvan",
+    "commands": [{
+      "id": "4886986e-5fcf-40df-9c3d-beb86b1e8ac1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5ac4ca2-638d-48d6-8ee5-9e3a1ba4c067",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn-primary",
+      "targets": [
+        ["css=tr:nth-child(7) .btn-primary", "css:finder"],
+        ["xpath=(//input[@value='sacuvaj'])[7]", "xpath:attributes"],
+        ["xpath=//tr[7]/td[2]/table/tbody/tr/td/input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55b2a0d4-6080-49df-ae52-0d751d29691f",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "recept je već sačuvan",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b85df663-b30c-4196-a8fb-396b75eec701",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a2e593a1-ccf7-4145-ae2e-7d3bb7e270d8"]
+  }],
+  "urls": ["http://localhost/project/public/index.php/Korisnik/prikaz_stranice", "http://localhost/project/public/index.php", "http://localhost/project/public/index.php/Gost/index_stranica"],
+  "plugins": []
+}

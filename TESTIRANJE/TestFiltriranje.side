@@ -1,0 +1,206 @@
+{
+  "id": "4ab376d8-18a4-4c17-b5c3-2c1a2dba0b33",
+  "version": "2.0",
+  "name": "TestFiltriranje",
+  "url": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+  "tests": [{
+    "id": "f13e6233-16aa-4a33-a03a-caae69540d40",
+    "name": "Test1 - slatko cose",
+    "commands": [{
+      "id": "8ed3ba9b-134f-4fbb-8c8b-8c7df15fdb62",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e5b10c85-d46c-452b-b6f4-fe84d94a1e34",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=slatko ćoše",
+      "targets": [
+        ["linkText=slatko ćoše", "linkText"],
+        ["css=tr:nth-child(1) > td > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'slatko ćoše')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=slatko_cose']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'slatko ćoše')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "86b4ad6a-3a21-47bb-9970-d2ef5bc49694",
+    "name": "Test2 - za mesojede",
+    "commands": [{
+      "id": "87a88152-e224-495e-9a8d-7894e35b8267",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "944b4a75-7226-455d-b8ee-05423115bb00",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=za mesojede",
+      "targets": [
+        ["linkText=za mesojede", "linkText"],
+        ["css=tr:nth-child(2) .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'za mesojede')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=za_mesojede']", "xpath:href"],
+        ["xpath=//tr[2]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'za mesojede')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b6a06dcf-b5b3-4acb-a59e-b349b86be626",
+    "name": "Test3 - svakojaka testa",
+    "commands": [{
+      "id": "8a1d5c6b-0748-439e-b96e-42be83df64f5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06dddd6b-c946-47e8-8bb3-c77b1a41fbbf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=svakojaka testa",
+      "targets": [
+        ["linkText=svakojaka testa", "linkText"],
+        ["css=tr:nth-child(3) .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'svakojaka testa')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=svakojaka_testa']", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'svakojaka testa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f4794c16-b764-4955-9a6f-bb9643596772",
+    "name": "Test4 - sva jela",
+    "commands": [{
+      "id": "3430f459-e6a2-45cd-9a19-770412ae80f3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0d08913-2570-45bd-a0b6-5e8932a58701",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=sva jela",
+      "targets": [
+        ["linkText=sva jela", "linkText"],
+        ["css=.text-success", "css:finder"],
+        ["xpath=//a[contains(text(),'sva jela')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=sva_jela']", "xpath:href"],
+        ["xpath=//tr[4]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'sva jela')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4cf66a6d-557f-48b5-83f6-13581b70953b",
+    "name": "Test5 - izvrsni kuvar",
+    "commands": [{
+      "id": "ac7db780-af15-4141-a760-0b505564baec",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b71b8c85-f64d-4ecc-9413-06b28ce871c5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=izvrsni kuvar",
+      "targets": [
+        ["linkText=izvrsni kuvar", "linkText"],
+        ["css=tr:nth-child(5) .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'izvrsni kuvar')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=izvrsni_kuvar']", "xpath:href"],
+        ["xpath=//tr[5]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'izvrsni kuvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "08a46064-2603-4591-92ab-065584b6844a",
+    "name": "Test6 - odlični kuvar",
+    "commands": [{
+      "id": "0c67550c-24af-46b0-94e7-aa8a3ed89065",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6524ce8d-7a69-482f-a152-7459035bd131",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=odlični kuvar",
+      "targets": [
+        ["linkText=odlični kuvar", "linkText"],
+        ["css=tr:nth-child(6) .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'odlični kuvar')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=odlicni_kuvar']", "xpath:href"],
+        ["xpath=//tr[6]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'odlični kuvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d67f4214-0987-4c85-88a9-f3fe9704df4e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=odlični kuvar",
+      "targets": [
+        ["linkText=odlični kuvar", "linkText"],
+        ["css=tr:nth-child(6) .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'odlični kuvar')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=odlicni_kuvar']", "xpath:href"],
+        ["xpath=//tr[6]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'odlični kuvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "bd2fbbb7-b51f-4e48-86d9-99ddf300d849",
+    "name": "Test7 - solidni kuvar",
+    "commands": [{
+      "id": "1796a319-41aa-4370-9cda-26e83dc7c127",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab69ed4d-a39d-4dd1-aed7-befc59240006",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=solidni kuvar",
+      "targets": [
+        ["linkText=solidni kuvar", "linkText"],
+        ["css=tr:nth-child(7) .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'solidni kuvar')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=meni_pocetna&izbor=solidni_kuvar']", "xpath:href"],
+        ["xpath=//tr[7]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'solidni kuvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "270c69c1-4e7c-4e80-9158-0c22f4600244",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f13e6233-16aa-4a33-a03a-caae69540d40"]
+  }],
+  "urls": [],
+  "plugins": []
+}
