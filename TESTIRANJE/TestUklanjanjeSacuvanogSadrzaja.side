@@ -2,7 +2,7 @@
   "id": "53d7a685-d52e-492f-9139-2874dbf15b8f",
   "version": "2.0",
   "name": "TestUklanjanjeSacuvanogSadrzaja",
-  "url": "http://localhos:8080/index.php/Korisnik/prikaz_stranice",
+  "url": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
   "tests": [{
     "id": "d03456ea-29df-4a7e-a302-56d5c42cd235",
     "name": "Test1",
@@ -10,7 +10,7 @@
       "id": "56a8f536-6227-4979-964e-8744e8130b69",
       "comment": "",
       "command": "open",
-      "target": "http://localhos:8080/index.php/Korisnik/prikaz_stranice?",
+      "target": "http://localhost:8080/index.php/Korisnik/prikaz_stranice",
       "targets": [],
       "value": ""
     }, {
@@ -44,14 +44,46 @@
     }, {
       "id": "b8a27e9a-277c-40ab-b6ab-9596d5e857a2",
       "comment": "",
+      "command": "storeText",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > h5",
+      "targets": [
+        ["css=h5", "css:finder"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'kiflice sa mesom')]", "xpath:innerText"]
+      ],
+      "value": "tekst"
+    }, {
+      "id": "bdd0ca24-24d9-4cff-bcd7-59915cfe9feb",
+      "comment": "",
+      "command": "echo",
+      "target": "${tekst}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c54e6c38-160c-45c5-b5ac-bb28df4ad1d5",
+      "comment": "",
       "command": "click",
       "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > .btn",
-      "targets": [
-        ["css=tr:nth-child(1) > td > table > tbody > tr > td > .btn", "css:finder"],
-        ["xpath=//input[@value='izbaci']", "xpath:attributes"],
-        ["xpath=//td/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
+    }, {
+      "id": "cf9e9909-879f-4073-8f0f-01eb27da23bf",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ca78cab-2721-4abc-b2ad-7c2bdde35319",
+      "comment": "",
+      "command": "verifyNotText",
+      "target": "css=tr:nth-child(1) > td > table > tbody > tr > td > h5",
+      "targets": [
+        ["css=tr:nth-child(1) > td > table > tbody > tr > td > h5", "css:finder"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'punjene paprike')]", "xpath:innerText"]
+      ],
+      "value": "${tekst}"
     }]
   }],
   "suites": [{
@@ -62,6 +94,6 @@
     "timeout": 300,
     "tests": ["d03456ea-29df-4a7e-a302-56d5c42cd235"]
   }],
-  "urls": ["http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=moj_nalog&izbor=sacuvana_jela", "http://localhost/project/public/index.php/Korisnik/prikaz_stranice?"],
+  "urls": ["http://localhost/project/public/index.php/Korisnik/prikaz_stranice?meni=moj_nalog&izbor=sacuvana_jela", "http://localhost/project/public/index.php/Korisnik/prikaz_stranice?", "http://localhost/project/public/index.php/Korisnik/prikaz_stranice"],
   "plugins": []
 }
